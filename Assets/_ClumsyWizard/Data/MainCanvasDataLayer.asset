@@ -16,5 +16,6 @@ MonoBehaviour:
   - Default
   - Story
   - HUD
+  - ManagementUI
   - PauseMenu
   - Scene Manager

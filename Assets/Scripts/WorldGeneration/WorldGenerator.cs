@@ -1,9 +1,10 @@
+using ClumsyWizard.Core;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class WorldGenerator : MonoBehaviour
+public class WorldGenerator : CW_Singleton<WorldGenerator>
 {
     [Header("Track")]
     [SerializeField] private Transform trackHolder;
@@ -11,12 +12,6 @@ public class WorldGenerator : MonoBehaviour
     [SerializeField] private float distanceBeforeReorder;
 
     private Transform lastTrack;
-
-    [Header("World Props")]
-    [SerializeField] private GameObject station;
-    [SerializeField] private Transform stationSpawnPoint;
-    [SerializeField] private Vector2 timeBetweenStation;
-    private float currentTime;
 
     [Header("World Props")]
     [SerializeField] private GameObject[] props;
@@ -35,8 +30,22 @@ public class WorldGenerator : MonoBehaviour
             originalSpawnPoints.Add(spawnPointHolder.GetChild(i).position);
         }
 
+        GameManager.Instance.OnStateChange += OnGameStateChange;
+
         SpawnNewProps();
-        SpawnNewStation();
+    }
+
+    private void OnGameStateChange(GameState state)
+    {
+        if (state == GameState.Station)
+        {
+            CancelInvoke("SpawnNewProps");
+        }
+        else if (state == GameState.Travelling || state == GameState.UnderAttack)
+        {
+            CancelInvoke("SpawnNewProps");
+            Invoke("SpawnNewProps", timeBetweenSpawn);
+        }
     }
 
     private void Update()
@@ -47,19 +56,6 @@ public class WorldGenerator : MonoBehaviour
             lastTrack.SetAsLastSibling();
             lastTrack = trackHolder.GetChild(0);
         }
-    }
-
-    //Spawn Station
-    private void SpawnNewStation()
-    {
-        currentTime = Random.Range(timeBetweenStation.x, timeBetweenStation.y);
-        Invoke("CreateStation", currentTime);
-    }
-
-    private void CreateStation()
-    {
-        CancelInvoke("SpawnNewProps");
-        Instantiate(station, stationSpawnPoint.position, Quaternion.identity);
     }
 
     //Spawn Props
@@ -73,8 +69,7 @@ public class WorldGenerator : MonoBehaviour
 
         if (Random.Range(0, 101) <= propSpawnChance)
         {
-            GameObject prop =  Instantiate(props[Random.Range(0, props.Length)], currentSpawnPoints[0], Quaternion.identity);
-            Destroy(prop, 15.0f);
+            Instantiate(props[Random.Range(0, props.Length)], currentSpawnPoints[0], Quaternion.identity);
         }
 
         currentSpawnPoints.RemoveAt(0);
