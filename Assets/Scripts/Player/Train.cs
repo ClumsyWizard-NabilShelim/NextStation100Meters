@@ -45,6 +45,8 @@ public class RepairData
 
 public class Train : MonoBehaviour
 {
+    public WeaponSystem WeaponSystem { get; private set; }
+
     [Header("Upgrade")]
     [SerializeField] private CargoCompartment cargoCompartmentPrefab;
     [SerializeField] private float newCompartmentSpace;
@@ -56,7 +58,6 @@ public class Train : MonoBehaviour
 
     [Header("Stats")]
     [SerializeField] private int hullIntegrity;
-    [SerializeField] private int damage;
     private int currentHullIntegrity;
     private int cargoSpaceBonus;
 
@@ -74,17 +75,23 @@ public class Train : MonoBehaviour
 
     public void Initialize()
     {
+        WeaponSystem= GetComponentInChildren<WeaponSystem>();
+
         engineCompartment.Initialize(this);
         workerCompartment.Initialize(this);
         for (int i = 0; i < cargoCompartments.Count; i++)
         {
             cargoCompartments[i].Initialize(this);
+            if (i == cargoCompartments.Count - 1)
+                cargoCompartments[i].SetEnd(true);
+            else
+                cargoCompartments[i].SetEnd(false);
         }
 
         AddPassengerStat(StatType.Infection, 0);
         AddPassengerStat(StatType.Anger, 0);
 
-        transform.position = new Vector3(transform.childCount - 1.0f, transform.position.y, 0.0f);
+        transform.position = new Vector3((transform.childCount - 1.0f) * 2, transform.position.y, 0.0f);
 
         currentHullIntegrity = hullIntegrity;
         CalculateRepairCheckRange();
@@ -299,9 +306,12 @@ public class Train : MonoBehaviour
     public void AddCargoCompartment()
     {
         CargoCompartment compartment = Instantiate(cargoCompartmentPrefab, transform);
-        compartment.transform.position = new Vector3(-(1 + cargoCompartments.Count) * newCompartmentSpace, transform.position.y, transform.position.z);
+        compartment.transform.position = new Vector3(cargoCompartments[cargoCompartments.Count - 1].transform.position.x - newCompartmentSpace, transform.position.y, transform.position.z);
         compartment.Initialize(this);
+        cargoCompartments[cargoCompartments.Count - 1].SetEnd(false);
+        compartment.SetEnd(true);
         cargoCompartments.Add(compartment);
+        transform.position = new Vector3((transform.childCount - 1.0f) * 2, transform.position.y, 0.0f);
         PlayerDataManager.Instance.UpdateCargoUI();
     }
     public void IncreaseWorkerCapacity(WorkerType type, int amount)
@@ -310,7 +320,7 @@ public class Train : MonoBehaviour
     }
     public void IncreaseDamage(int amount)
     {
-        damage += amount;
+        WeaponSystem.IncreaseDamage(amount);
     }
 
     //UI

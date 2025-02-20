@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 248527582138143862, guid: 2c34cd170377d0347b06a46598aac09c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1434222837, guid: f6365e712732eb949a622cac15e54a80, type: 3}
     - target: {fileID: 5112864507554467522, guid: 2c34cd170377d0347b06a46598aac09c, type: 3}
       propertyPath: m_Name
       value: TrainCompartment-Engine Variant
@@ -77,4 +81,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2f9789870dab3648b451166df908dde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Health>k__BackingField: 100

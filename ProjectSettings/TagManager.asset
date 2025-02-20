@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Train
   - Enemy
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - Player
   - Water
   - UI
-  - Ground
+  - Environment
   - LevelObject
   - Enemy
   - 
@@ -46,7 +47,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: LevelObject
+  - name: Environment
     uniqueID: 1296139461
     locked: 0
   - name: Player
