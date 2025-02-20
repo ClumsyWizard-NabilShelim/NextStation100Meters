@@ -47,10 +47,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b84344fc82b49645a56c1e389810286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <EngineCompartment>k__BackingField: {fileID: 7155343466486728437}
-  <WorkerCompartment>k__BackingField: {fileID: 4655327466128043181}
-  <CargoCompartments>k__BackingField:
+  cargoCompartmentPrefab: {fileID: 6459063306353908783, guid: e06bdb3b4a5b4094f9a6d40c29fb193b, type: 3}
+  newCompartmentSpace: 2
+  engineCompartment: {fileID: 7155343466486728437}
+  workerCompartment: {fileID: 4655327466128043181}
+  cargoCompartments:
   - {fileID: 3139589310651439361}
+  hullIntegrity: 300
+  damage: 10
+  repairMetalCostRange: {x: 15, y: 55}
+  repairScrewCostRange: {x: 15, y: 55}
+  repairIcons:
+    entries:
+    - key: 0
+      value: {fileID: 21300000, guid: bfb8a0c754409d74a9b0b21618f994aa, type: 3}
+    - key: 1
+      value: {fileID: 21300000, guid: 88e0d966139e207499d0e1dfbddf6b0d, type: 3}
+    - key: 2
+      value: {fileID: 21300000, guid: 66afb4b1eae57db46a0ef038bcbb9cf8, type: 3}
 --- !u!1001 &980866280104982018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -171,6 +185,22 @@ PrefabInstance:
     - target: {fileID: 1437397646698536160, guid: ccb92c0e966c2454ea8819e55bd81b3b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932628159523842488, guid: ccb92c0e966c2454ea8819e55bd81b3b, type: 3}
+      propertyPath: workerCapacity.entries.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932628159523842488, guid: ccb92c0e966c2454ea8819e55bd81b3b, type: 3}
+      propertyPath: workerCapacity.entries.Array.data[1].key
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932628159523842488, guid: ccb92c0e966c2454ea8819e55bd81b3b, type: 3}
+      propertyPath: workerCapacity.entries.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932628159523842488, guid: ccb92c0e966c2454ea8819e55bd81b3b, type: 3}
+      propertyPath: workerCapacity.entries.Array.data[1].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4188646462607590397, guid: ccb92c0e966c2454ea8819e55bd81b3b, type: 3}
       propertyPath: m_Name

@@ -40,4 +40,11 @@ public class WorkerCompartment : TrainCompartment
 
         PlayerDataManager.Instance.UpdateWorkerUI(type, workers[type], workerCapacity[type]);
     }
+
+    public void IncreaseWorkerCapacity(WorkerType type, int amount)
+    {
+        workerCapacity[type] += amount;
+        workers[type] += amount;
+        PlayerDataManager.Instance.UpdateWorkerUI(type, workers[type], workerCapacity[type]);
+    }
 }

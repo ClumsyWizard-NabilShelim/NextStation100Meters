@@ -58,6 +58,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f3733540862570468c43a9c68bf8aa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cargoAmountRange:
+    entries:
+    - key: 0
+      value: {x: 20, y: 100}
+    - key: 1
+      value: {x: 10, y: 80}
+    - key: 2
+      value: {x: 10, y: 50}
+  cargoCostRange:
+    entries:
+    - key: 0
+      value: {x: 3, y: 8}
+    - key: 1
+      value: {x: 3, y: 8}
+    - key: 2
+      value: {x: 5, y: 15}
+  passengerTravelDistanceRange: {x: 1, y: 3}
 --- !u!1 &7420194726258923295
 GameObject:
   m_ObjectHideFlags: 0

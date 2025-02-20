@@ -44,6 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49c85e1f8f241284680f5e27cd988b99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldSpeed: 4
-  slowDownRate: 10
-  <TimeBetweenStation>k__BackingField: {x: 5, y: 5}
+  worldSpeed: 6
+  changeRate: 0

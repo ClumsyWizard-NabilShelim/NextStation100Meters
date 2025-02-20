@@ -34,6 +34,7 @@ public class StationManager : CW_Singleton<StationManager>
     private void CreateStation()
     {
         CurrentStation = Instantiate(station, stationSpawnPoint.position, Quaternion.identity);
+        CurrentStation.Initialize();
         GameManager.Instance.SetState(GameState.Station);
     }
 }
