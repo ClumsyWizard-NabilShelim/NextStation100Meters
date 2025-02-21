@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour
 {
     protected Animator animator;
-    private EnemyHealthComponenet enemyStats;
+    protected EnemyHealthComponenet enemyStats;
     private Vector2 targetPosition;
     private Vector2 startingPosition;
     [SerializeField] private float timeToTarget;
@@ -48,7 +48,7 @@ public abstract class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void Retreat()
+    public virtual void Retreat()
     {
         currentMoveTime = 0;
         Vector2 temp = targetPosition;

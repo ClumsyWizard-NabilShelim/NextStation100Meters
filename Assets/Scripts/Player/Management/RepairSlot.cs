@@ -12,19 +12,19 @@ public class RepairSlot : MonoBehaviour
     [SerializeField] private TextMeshProUGUI infoText;
     [SerializeField] private CW_Button confirmButton;
 
-    private int index;
-    private Action<int> onConfirm;
+    private string id;
+    private Action<string> onConfirm;
 
-    public void Initialize(int index, Sprite icon, string info,Action<int> onConfirm)
+    public void Initialize(string id, Sprite icon, string info,Action<string> onConfirm)
     {
-        this.index = index;
+        this.id = id;
         this.onConfirm = onConfirm;
 
         iconImage.sprite = icon;
         infoText.text = info;
         confirmButton.SetClickEvent(() =>
         {
-            onConfirm?.Invoke(index);
+            onConfirm?.Invoke(id);
         });
     }
 }

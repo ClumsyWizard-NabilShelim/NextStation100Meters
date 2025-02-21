@@ -13,6 +13,10 @@ public class WorldGenerator : CW_Singleton<WorldGenerator>
 
     private Transform lastTrack;
 
+    [Header("Crate Spawn")]
+    [SerializeField] private float crateSpawnRate;
+    [SerializeField] private GameObject cratePrefab;
+
     [Header("World Props")]
     [SerializeField] private GameObject[] props;
     [SerializeField] private Transform spawnPointHolder;
@@ -69,7 +73,10 @@ public class WorldGenerator : CW_Singleton<WorldGenerator>
 
         if (Random.Range(0, 101) <= propSpawnChance)
         {
-            Instantiate(props[Random.Range(0, props.Length)], currentSpawnPoints[0], Quaternion.identity);
+            if(Random.Range(0,  101) <= crateSpawnRate)
+                Instantiate(cratePrefab, currentSpawnPoints[0], Quaternion.identity);
+            else
+                Instantiate(props[Random.Range(0, props.Length)], currentSpawnPoints[0], Quaternion.identity);
         }
 
         currentSpawnPoints.RemoveAt(0);

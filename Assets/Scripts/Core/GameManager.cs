@@ -79,6 +79,9 @@ public class GameManager : CW_Singleton<GameManager>
 
     private void Update()
     {
+        if (State == GameState.Over)
+            return;
+
         if (State == GameState.Station)
         {
             if (currentTime <= changeRate)
@@ -92,18 +95,6 @@ public class GameManager : CW_Singleton<GameManager>
         }
         else
         {
-            if (State != GameState.UnderAttack)
-            {
-                if (currentCombatDelayTime <= 0.0f)
-                {
-                    EnemyManager.Instance.StartWave();
-                }
-                else
-                {
-                    currentCombatDelayTime -= Time.deltaTime;
-                }
-            }
-
             if(currentTravelTime <= 0.0f)
             {
                 if(State != GameState.UnderAttack)
@@ -125,12 +116,21 @@ public class GameManager : CW_Singleton<GameManager>
                 CurrentWorldSpeed = Mathf.Lerp(0.0f, worldSpeed, currentTime / changeRate);
                 currentTime += Time.deltaTime;
             }
+
+            if (currentCombatDelayTime <= 0.0f)
+            {
+                EnemyManager.Instance.StartWave();
+            }
+            else
+            {
+                currentCombatDelayTime -= Time.deltaTime;
+            }
         }
     }
 
     public void SetState(GameState state)
     {
-        if (State == state)
+        if (State == state || State == GameState.Over)
             return;
 
         GameState previousState = State;
@@ -166,7 +166,7 @@ public class GameManager : CW_Singleton<GameManager>
     {
         gameOverAnimator.SetBool("Show", true);
         gameOverReasonText.text = reason;
-        statValuesText.text = $"{StationsReached}\n\n{PassengersCarried}\n{PassengersKilled}\n{PassengersInfected}\n\n{BulletsEarned}\n{BulletsSpent}";
+        statValuesText.text = $"{StationsReached}\n\n{PassengersCarried}\n{PassengersKilled}\n\n{BulletsEarned}\n{BulletsSpent}";
         SetState(GameState.Over);
     }
 }

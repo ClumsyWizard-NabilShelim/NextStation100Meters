@@ -23,17 +23,18 @@ public class BikerRaiderEnemy : Enemy
     {
         rider.JumpToTarget(PlayerDataManager.Instance.Train.GetRandomPointOnBody());
         animator.SetTrigger("Destroy");
-        Invoke("DestroyBike", 0.5f);
+        Invoke("DestroyBike", 1.05f);
     }
 
     private void DestroyBike()
     {
+        enemyStats.DestroyEffect();
         base.Killed();
     }
 
-    public override void Killed()
+    public override void Retreat()
     {
-        rider.Explode();
-        base.Killed();
+        base.Retreat();
+        CancelInvoke("ThrowRider");
     }
 }

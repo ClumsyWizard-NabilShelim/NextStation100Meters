@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  explosionEffect: {fileID: 3303646238470023396, guid: 3d1f38d798b855841b7e3cac1ed67ea7, type: 3}
 --- !u!60 &1819989782698760648
 PolygonCollider2D:
   m_ObjectHideFlags: 0

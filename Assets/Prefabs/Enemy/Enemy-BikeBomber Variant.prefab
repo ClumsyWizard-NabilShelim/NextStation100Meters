@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5400506075557165487}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.4, y: 0.39999998, z: 0}
+  m_LocalPosition: {x: 0.4, y: 0.772, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -74,6 +74,7 @@ MonoBehaviour:
   damageLayer:
     serializedVersion: 2
     m_Bits: 264
+  explosionEffect: {fileID: 6614054385379709013, guid: d888dc84879df324aa487265e57ac445, type: 3}
 --- !u!1 &7194510723919991482
 GameObject:
   m_ObjectHideFlags: 0

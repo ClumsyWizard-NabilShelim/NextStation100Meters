@@ -142,7 +142,7 @@ MonoBehaviour:
       m_Height: 16
       m_HorizontalBearingX: 0
       m_HorizontalBearingY: 15
-      m_HorizontalAdvance: 9
+      m_HorizontalAdvance: 14
     m_GlyphRect:
       m_X: 0
       m_Y: 112
@@ -158,7 +158,7 @@ MonoBehaviour:
       m_Height: 16
       m_HorizontalBearingX: 0
       m_HorizontalBearingY: 15
-      m_HorizontalAdvance: 9
+      m_HorizontalAdvance: 14
     m_GlyphRect:
       m_X: 16
       m_Y: 112
@@ -174,7 +174,7 @@ MonoBehaviour:
       m_Height: 16
       m_HorizontalBearingX: 0
       m_HorizontalBearingY: 15
-      m_HorizontalAdvance: 9
+      m_HorizontalAdvance: 14
     m_GlyphRect:
       m_X: 32
       m_Y: 112
@@ -190,7 +190,7 @@ MonoBehaviour:
       m_Height: 16
       m_HorizontalBearingX: 0
       m_HorizontalBearingY: 15
-      m_HorizontalAdvance: 9
+      m_HorizontalAdvance: 14
     m_GlyphRect:
       m_X: 48
       m_Y: 112
@@ -206,7 +206,7 @@ MonoBehaviour:
       m_Height: 16
       m_HorizontalBearingX: 0
       m_HorizontalBearingY: 15
-      m_HorizontalAdvance: 9
+      m_HorizontalAdvance: 14
     m_GlyphRect:
       m_X: 64
       m_Y: 112
@@ -222,7 +222,7 @@ MonoBehaviour:
       m_Height: 16
       m_HorizontalBearingX: 0
       m_HorizontalBearingY: 15
-      m_HorizontalAdvance: 9
+      m_HorizontalAdvance: 14
     m_GlyphRect:
       m_X: 80
       m_Y: 112
@@ -238,7 +238,7 @@ MonoBehaviour:
       m_Height: 16
       m_HorizontalBearingX: 0
       m_HorizontalBearingY: 15
-      m_HorizontalAdvance: 9
+      m_HorizontalAdvance: 14
     m_GlyphRect:
       m_X: 96
       m_Y: 112
@@ -254,7 +254,7 @@ MonoBehaviour:
       m_Height: 16
       m_HorizontalBearingX: 0
       m_HorizontalBearingY: 15
-      m_HorizontalAdvance: 9
+      m_HorizontalAdvance: 14
     m_GlyphRect:
       m_X: 112
       m_Y: 112
@@ -270,7 +270,7 @@ MonoBehaviour:
       m_Height: 16
       m_HorizontalBearingX: 0
       m_HorizontalBearingY: 15
-      m_HorizontalAdvance: 9
+      m_HorizontalAdvance: 14
     m_GlyphRect:
       m_X: 0
       m_Y: 96

@@ -11,12 +11,6 @@ public enum StatType
     Anger
 }
 
-public enum WorkerType
-{
-    Normal,
-    Armed
-}
-
 public enum CargoType
 {
     Metal,
@@ -38,12 +32,11 @@ public class PlayerDataManager : CW_Singleton<PlayerDataManager>
 
     [Header("Workers")]
     [SerializeField] private int startingNormalWorkers;
-    [SerializeField] private int startingArmedWorkers;
 
     [Header("UI")]
     [SerializeField] private StatAmount bulletUI;
+    [SerializeField] private StatAmount workerAmountUI;
     [SerializeField] private CW_Dictionary<StatType, StatBar> statBarUI;
-    [SerializeField] private CW_Dictionary<WorkerType, StatAmount> workerAmountUI;
     [SerializeField] private CW_Dictionary<CargoType, StatAmount> cargoAmountUI;
 
 
@@ -55,8 +48,7 @@ public class PlayerDataManager : CW_Singleton<PlayerDataManager>
         currentBullets = startingBullets;
         UpdateBulletUI();
 
-        Train.AddWorker(WorkerType.Normal, startingNormalWorkers);
-        Train.AddWorker(WorkerType.Armed, startingArmedWorkers);
+        Train.AddWorker(startingNormalWorkers);
 
         Train.AddCargo(CargoType.Metal, startingMetals);
         Train.AddCargo(CargoType.Screw, startingScrews);
@@ -95,9 +87,9 @@ public class PlayerDataManager : CW_Singleton<PlayerDataManager>
     {
         statBarUI[type].SetBarData(currentAmount / (float)maxAmount, $"{currentAmount}/{maxAmount}");
     }
-    public void UpdateWorkerUI(WorkerType type, int currentAmount, int maxAmount)
+    public void UpdateWorkerUI(int currentAmount)
     {
-        workerAmountUI[type].SetData($"{currentAmount}/{maxAmount}");
+        workerAmountUI.SetData($"{currentAmount}");
     }
     public void UpdateCargoUI()
     {

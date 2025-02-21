@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6173534641582989343, guid: d431a88b403eb48b98a80a7c76033dda, type: 3}
+      propertyPath: randomizeRadius
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1534938644749586394, guid: d431a88b403eb48b98a80a7c76033dda, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -50,28 +54,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2204294164060760716, guid: d431a88b403eb48b98a80a7c76033dda, type: 3}
       propertyPath: m_Size.x
-      value: 0.76045716
+      value: 0.45314467
       objectReference: {fileID: 0}
     - target: {fileID: 2204294164060760716, guid: d431a88b403eb48b98a80a7c76033dda, type: 3}
       propertyPath: m_Size.y
-      value: 0.5400881
+      value: 0.29187018
       objectReference: {fileID: 0}
     - target: {fileID: 2204294164060760716, guid: d431a88b403eb48b98a80a7c76033dda, type: 3}
       propertyPath: m_Offset.x
-      value: 0
+      value: -0.039351612
       objectReference: {fileID: 0}
     - target: {fileID: 2204294164060760716, guid: d431a88b403eb48b98a80a7c76033dda, type: 3}
       propertyPath: m_Offset.y
-      value: 0.35626695
+      value: 0.071724504
       objectReference: {fileID: 0}
     - target: {fileID: 6058646127592360245, guid: d431a88b403eb48b98a80a7c76033dda, type: 3}
       propertyPath: m_Name
-      value: Prop-Rock Variant
+      value: Prop-Grass 2 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6831067335935618457, guid: d431a88b403eb48b98a80a7c76033dda, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 71fdb48a6ae22407b9e3650320bcb1d9, type: 3}
+      objectReference: {fileID: 630290876, guid: 7fb944d8f3798314e899c5b3f121fa52, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

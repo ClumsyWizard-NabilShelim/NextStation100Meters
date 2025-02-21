@@ -40,6 +40,7 @@ public class CarRaiderEnemy : Enemy
             animator.SetBool("Shoot", true);
             currentTime = timeBetweenShots;
             currentShotsFired++;
+            CameraShake.Instance.ShakeObject(0.1f, ShakeMagnitude.Medium);
             Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation).Initialize(damage);
         }
 

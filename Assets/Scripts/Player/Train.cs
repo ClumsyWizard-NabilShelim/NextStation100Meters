@@ -23,24 +23,28 @@ public class PassengerTraveDetails
 
 public enum RepairType
 {
-    Hull,
+    Worker_Area,
     Engine,
-    CargoArea,
+    Cargo_Area,
 }
 
 public class RepairData
 {
-    public string Name;
+    public string ID;
+    public RepairType Type;
     public Sprite Icon;
     public int MetalCost;
     public int ScrewCost;
+    public float TimeRequired;
 
-    public RepairData(string name, Sprite icon, int metalCost, int screwCost)
+    public RepairData(string id, RepairType type, Sprite icon, int metalCost, int screwCost, float timeRequired)
     {
-        Name = name;
+        ID = id;
+        Type = type;
         Icon = icon;
         MetalCost = metalCost;
         ScrewCost = screwCost;
+        TimeRequired = timeRequired;
     }
 }
 
@@ -67,7 +71,8 @@ public class Train : MonoBehaviour
     [SerializeField] private Vector2Int repairScrewCostRange;
     [SerializeField] private CW_Dictionary<RepairType, Sprite> repairIcons;
     private float repairCheckRange;
-    public List<RepairData> RequiredRepairs { get; private set; } = new List<RepairData>();
+    public Dictionary<string, RepairData> RequiredRepairs { get; private set; } = new Dictionary<string, RepairData>();
+    private int repairIDGenerationNumber;
 
     //Stats and cargo
     private CW_Dictionary<StatType, int> passengerState = new CW_Dictionary<StatType, int>();
@@ -93,7 +98,6 @@ public class Train : MonoBehaviour
         }
         CreateBounds();
 
-        AddPassengerStat(StatType.Infection, 0);
         AddPassengerStat(StatType.Anger, 0);
 
         transform.position = new Vector3((transform.childCount - 1.0f) * 2, transform.position.y, 0.0f);
@@ -121,22 +125,90 @@ public class Train : MonoBehaviour
             if(details.StationsLeft <= 0)
             {
                 RemoveCargo(CargoType.Passenger, details.Count);
-                PlayerDataManager.Instance.AddBullets(details.Count * details.Fee);
-
                 UpdatePassengerStatUI();
 
                 passengerDetails.RemoveAt(i);
             }
         }
+
+        RemovePassengerStat(StatType.Anger, Mathf.CeilToInt(passengerState[StatType.Anger] * 0.05f)); // 5% decrease in total anger
+    }
+
+    public void RemovePassengerData(int amount)
+    {
+        if (passengerDetails.Count == 0)
+            return;
+
+        if(amount <= passengerDetails[0].Count)
+        {
+            passengerDetails[0].Count -= amount;
+            RemoveCargo(CargoType.Passenger, amount);
+            if (passengerDetails[0].Count <= 0)
+                passengerDetails.RemoveAt(0);
+        }
+        else
+        {
+            int diff = amount - passengerDetails[0].Count;
+            RemoveCargo(CargoType.Passenger, passengerDetails[0].Count);
+            passengerDetails.RemoveAt(0);
+            RemovePassengerData(diff);
+        }
+    }
+
+    public Worker GetWorker()
+    {
+        return workerCompartment.GetWorker();
     }
 
     //Health
-    public void RepairIssue(int index)
+    public void RepairIssueAndChargeResource(string id)
     {
+        PlayerDataManager.Instance.Train.RemoveCargo(CargoType.Metal, RequiredRepairs[id].MetalCost);
+        PlayerDataManager.Instance.Train.RemoveCargo(CargoType.Screw, RequiredRepairs[id].ScrewCost);
+
+        RepairType type = RequiredRepairs[id].Type;
         Heal((int)((hullIntegrity - currentHullIntegrity) / (float)RequiredRepairs.Count));
-        RemovePassengerStat(StatType.Anger, 5); // 5% decrease in anger for every issue fixed
-        RequiredRepairs.RemoveAt(index);
+        RequiredRepairs.Remove(id);
+
+        if (type == RepairType.Engine)
+        {
+            engineCompartment.Management.RemoveRepairPopUp(id);
+        }
+        if (type == RepairType.Worker_Area)
+        {
+            workerCompartment.Management.RemoveRepairPopUp(id);
+        }
+        else
+        {
+            cargoCompartments[0].Management.RemoveRepairPopUp(id);
+        }
     }
+    public bool CanRepair(string id)
+    {
+        return HasEnoughCargo(CargoType.Metal, RequiredRepairs[id].MetalCost) && HasEnoughCargo(CargoType.Screw, RequiredRepairs[id].ScrewCost);
+    }
+    private void AddRepair()
+    {
+        RepairType type = (RepairType)Random.Range(0, Enum.GetValues(typeof(RepairType)).Length);
+        string id = $"{type}_{repairIDGenerationNumber}";
+        float timeRequired = Random.Range(5.0f, 10.0f);
+        RequiredRepairs.Add(id, new RepairData(id , type, repairIcons[type], Random.Range(repairMetalCostRange.x, repairMetalCostRange.y + 1), Random.Range(repairScrewCostRange.x, repairScrewCostRange.y + 1), timeRequired));
+        repairIDGenerationNumber++;
+
+        if (type == RepairType.Engine)
+        {
+            engineCompartment.Management.AddRepairPopUp(RequiredRepairs[id]);
+        }
+        else if (type == RepairType.Worker_Area)
+        {
+            workerCompartment.Management.AddRepairPopUp(RequiredRepairs[id]);
+        }
+        else
+        {
+            cargoCompartments[0].Management.AddRepairPopUp(RequiredRepairs[id]);
+        }
+    }
+
     public void Damage(int amount)
     {
         currentHullIntegrity -= amount;
@@ -148,9 +220,7 @@ public class Train : MonoBehaviour
 
         if(currentHullIntegrity < repairCheckRange)
         {
-            RepairType type = (RepairType)Random.Range(0, Enum.GetValues(typeof(RepairType)).Length);
-            RequiredRepairs.Add(new RepairData(type.ToString(), repairIcons[type], Random.Range(repairMetalCostRange.x, repairMetalCostRange.y + 1), Random.Range(repairScrewCostRange.x, repairScrewCostRange.y + 1)));
-
+            AddRepair();
             AddPassengerStat(StatType.Anger, 5); // 5% increase in anger for every repair required
 
             CalculateRepairCheckRange();
@@ -182,9 +252,6 @@ public class Train : MonoBehaviour
     //Stats
     public void AddPassengerStat(StatType type, int amount)
     {
-        if (amount > GetCargoCount(CargoType.Passenger))
-            return;
-
         if (passengerState.ContainsKey(type))
         {
             passengerState[type] += amount;
@@ -220,15 +287,17 @@ public class Train : MonoBehaviour
     }
 
     //Worker
-    public void AddWorker(WorkerType type, int amount)
+    public void AddWorker(int amount)
     { 
-        workerCompartment.AddWorker(type, amount);
+        workerCompartment.AddWorker(amount);
     }
 
     //Cargo Usage
     public void AddPassengerDetials(int count, int stations, int fee)
     {
-        passengerDetails.Add(new PassengerTraveDetails(count, stations, fee));
+        PassengerTraveDetails details = new PassengerTraveDetails(count, stations, fee);
+        passengerDetails.Add(details);
+        PlayerDataManager.Instance.AddBullets(details.Count * details.Fee);
         GameManager.Instance.PassengersCarried += count;
         AddCargo(CargoType.Passenger, count);
     }
@@ -326,9 +395,13 @@ public class Train : MonoBehaviour
         PlayerDataManager.Instance.UpdateCargoUI();
         CreateBounds();
     }
-    public void IncreaseWorkerCapacity(WorkerType type, int amount)
+    public void IncreaseWorkerCapacity(int amount)
     {
-        workerCompartment.IncreaseWorkerCapacity(type, amount);
+        workerCompartment.IncreaseWorkerCapacity(amount);
+    }
+    public void ArmWorkers()
+    {
+        workerCompartment.ArmWorkers();
     }
     public void IncreaseDamage(int amount)
     {
@@ -342,7 +415,6 @@ public class Train : MonoBehaviour
     }
     public void UpdatePassengerStatUI()
     {
-        PlayerDataManager.Instance.UpdateStatUI(StatType.Infection, passengerState[StatType.Infection], 100);
         PlayerDataManager.Instance.UpdateStatUI(StatType.Anger, passengerState[StatType.Anger], 100);
     }
 
@@ -359,6 +431,6 @@ public class Train : MonoBehaviour
     }
     public Vector2 GetRandomPointOnBody()
     {
-        return new Vector2(Random.Range(bound.min.x, bound.max.x), Random.Range(bound.min.y, bound.max.y));
+        return new Vector2(Random.Range(bound.min.x, bound.max.x), Random.Range(-2.0f, -1.0f));
     }
 }

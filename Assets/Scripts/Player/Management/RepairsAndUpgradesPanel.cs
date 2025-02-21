@@ -55,23 +55,19 @@ public class RepairsAndUpgradesPanel : ManagementPanel
             Destroy(repairSlotHolder.GetChild(i).gameObject);
         }
 
-        for(int i = 0; i < PlayerDataManager.Instance.Train.RequiredRepairs.Count; i++)
+        foreach (RepairData data in PlayerDataManager.Instance.Train.RequiredRepairs.Values)
         {
-            RepairData data = PlayerDataManager.Instance.Train.RequiredRepairs[i];
-            Instantiate(repairSlotPrefab, repairSlotHolder).Initialize(i, data.Icon, $"Repair the {data.Name} for\n {data.MetalCost} <sprite={(int)Icon.Metal}>  {data.ScrewCost} <sprite={(int)Icon.Screw}>", OnRepair);
+            Instantiate(repairSlotPrefab, repairSlotHolder).Initialize(data.ID, data.Icon, $"Repair the {data.Type.ToString().Replace("_", " ")} for\n {data.MetalCost} <sprite={(int)Icon.Metal}>  {data.ScrewCost} <sprite={(int)Icon.Screw}>", OnRepair);
         }
     }
 
-    private void OnRepair(int index)
+    private void OnRepair(string id)
     {
-        RepairData data = PlayerDataManager.Instance.Train.RequiredRepairs[index];
+        RepairData data = PlayerDataManager.Instance.Train.RequiredRepairs[id];
 
         if (PlayerDataManager.Instance.Train.HasEnoughCargo(CargoType.Metal, data.MetalCost) && PlayerDataManager.Instance.Train.HasEnoughCargo(CargoType.Screw, data.ScrewCost))
         {
-            PlayerDataManager.Instance.Train.RemoveCargo(CargoType.Metal, data.MetalCost);
-            PlayerDataManager.Instance.Train.RemoveCargo(CargoType.Screw, data.ScrewCost);
-
-            PlayerDataManager.Instance.Train.RepairIssue(index);
+            PlayerDataManager.Instance.Train.RepairIssueAndChargeResource(id);
 
             Open();
         }
@@ -105,13 +101,13 @@ public class RepairsAndUpgradesPanel : ManagementPanel
                 {
                     PlayerDataManager.Instance.Train.IncreaseCargoSpace(data.Upgrades[type]);
                 }
-                else if (type == UpgradeType.NormalWorkerCapacity)
+                else if (type == UpgradeType.WorkerCapacity)
                 {
-                    PlayerDataManager.Instance.Train.IncreaseWorkerCapacity(WorkerType.Normal, data.Upgrades[type]);
+                    PlayerDataManager.Instance.Train.IncreaseWorkerCapacity(data.Upgrades[type]);
                 }
-                else if (type == UpgradeType.ArmedWorkerCapacity)
+                else if (type == UpgradeType.ArmWorkers)
                 {
-                    PlayerDataManager.Instance.Train.IncreaseWorkerCapacity(WorkerType.Armed, data.Upgrades[type]);
+                    PlayerDataManager.Instance.Train.ArmWorkers();
                 }
                 else if (type == UpgradeType.Damage)
                 {

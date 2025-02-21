@@ -5,6 +5,7 @@ public class EnemyHealthComponenet : MonoBehaviour, IDamageable
 {
     private Enemy enemy;
     [SerializeField] private int health;
+    [SerializeField] private GameObject explosionEffect;
     private int currentHealth;
 
     public void Initialize(Enemy enemy)
@@ -26,6 +27,13 @@ public class EnemyHealthComponenet : MonoBehaviour, IDamageable
 
     private void Dead()
     {
+        DestroyEffect();
         enemy.Killed();
+    }
+
+    public void DestroyEffect()
+    {
+        Destroy(Instantiate(explosionEffect, transform.position, explosionEffect.transform.rotation), 1.0f);
+        CameraShake.Instance.ShakeObject(0.1f, ShakeMagnitude.Small);
     }
 }

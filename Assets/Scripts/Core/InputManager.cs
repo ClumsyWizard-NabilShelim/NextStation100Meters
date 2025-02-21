@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class InputManager : CW_Persistant<InputManager>, ISceneLoadEvent
 {
@@ -18,7 +19,7 @@ public class InputManager : CW_Persistant<InputManager>, ISceneLoadEvent
                 OnPause?.Invoke();
         }
 
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
             OnShoot?.Invoke();
     }
 

@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float damageRadius;
     [SerializeField] private LayerMask damageLayer;
+    [SerializeField] private GameObject hitEffect;
     private int damage;
 
     public void Initialize(int damage)
@@ -29,6 +30,7 @@ public class Projectile : MonoBehaviour
             damageable.Damage(damage);
         }
 
+        Instantiate(hitEffect, transform.position, hitEffect.transform.rotation);
         Destroy(gameObject);
     }
 

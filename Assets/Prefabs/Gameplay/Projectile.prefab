@@ -162,3 +162,4 @@ MonoBehaviour:
   damageLayer:
     serializedVersion: 2
     m_Bits: 64
+  hitEffect: {fileID: 4663994050200735263, guid: 7d1d230ab74d3904ca179d7198eaf69a, type: 3}

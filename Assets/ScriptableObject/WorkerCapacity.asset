@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b48632b5d23656349888a8e5c97896ba, type: 3}
-  m_Name: ArmedWorker
+  m_Name: WorkerCapacity
   m_EditorClassIdentifier: 
   <Icon>k__BackingField: {fileID: 0}
-  <Name>k__BackingField: More Armed Workers
-  <Description>k__BackingField: Travel with more armed workers.
+  <Name>k__BackingField: More Workers
+  <Description>k__BackingField: Travel with more workers.
   <BulletCost>k__BackingField: 0
   <MetalCost>k__BackingField: 35
   <ScrewCost>k__BackingField: 35
   <Upgrades>k__BackingField:
     entries:
-    - key: 4
-      value: 3
+    - key: 3
+      value: 2

@@ -9,6 +9,7 @@ public class BikeRider : MonoBehaviour
     [SerializeField] private float damageRadius;
     [SerializeField] private float exlpodeDelay;
     [SerializeField] private LayerMask damageLayer;
+    [SerializeField] private GameObject explosionEffect;
 
     private Vector2 startingPos;
     private Vector2 targetPos;
@@ -68,7 +69,8 @@ public class BikeRider : MonoBehaviour
                 damageable.Damage(damage);
             }
         }
-
+        CameraShake.Instance.ShakeObject(0.3f, ShakeMagnitude.Large);
+        Destroy(Instantiate(explosionEffect, transform.position, explosionEffect.transform.rotation), 1.0f);
         Destroy(gameObject);
     }
 

@@ -7,8 +7,8 @@ public enum UpgradeType
     HullIntegrity,
     NewCargoContainer,
     CargoCapacity,
-    NormalWorkerCapacity,
-    ArmedWorkerCapacity,
+    WorkerCapacity,
+    ArmWorkers,
     Damage
 }
 

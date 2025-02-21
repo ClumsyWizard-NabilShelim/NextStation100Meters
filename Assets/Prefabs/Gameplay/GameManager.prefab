@@ -676,11 +676,9 @@ MonoBehaviour:
 
     Passengers Killed:
 
-    Passengers
-    Infected:
 
-
-    Bullets Earned:
+    Bullets
+    Earned:
 
     Bullets Spent:'
   m_isRightToLeft: 0
@@ -1055,24 +1053,12 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1163238742528173200, guid: e9e592c27d7f2624a80f707d4a4fd0c8, type: 3}
-      propertyPath: m_fontColor.b
-      value: 0.28627452
-      objectReference: {fileID: 0}
-    - target: {fileID: 1163238742528173200, guid: e9e592c27d7f2624a80f707d4a4fd0c8, type: 3}
-      propertyPath: m_fontColor.g
-      value: 0.80784315
-      objectReference: {fileID: 0}
-    - target: {fileID: 1163238742528173200, guid: e9e592c27d7f2624a80f707d4a4fd0c8, type: 3}
-      propertyPath: m_fontColor.r
-      value: 0.90588236
-      objectReference: {fileID: 0}
-    - target: {fileID: 1163238742528173200, guid: e9e592c27d7f2624a80f707d4a4fd0c8, type: 3}
       propertyPath: m_fontSizeBase
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1163238742528173200, guid: e9e592c27d7f2624a80f707d4a4fd0c8, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4283027175
+      value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 5996294414166890183, guid: e9e592c27d7f2624a80f707d4a4fd0c8, type: 3}
       propertyPath: m_Name
@@ -1105,10 +1091,6 @@ PrefabInstance:
     - target: {fileID: 7855703029248062041, guid: e9e592c27d7f2624a80f707d4a4fd0c8, type: 3}
       propertyPath: m_SizeDelta.x
       value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 7855703029248062041, guid: e9e592c27d7f2624a80f707d4a4fd0c8, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7855703029248062041, guid: e9e592c27d7f2624a80f707d4a4fd0c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1157,14 +1139,6 @@ PrefabInstance:
     - target: {fileID: 7855703029248062041, guid: e9e592c27d7f2624a80f707d4a4fd0c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8425442670806299679, guid: e9e592c27d7f2624a80f707d4a4fd0c8, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: e231a33e70ec9594e907fb34fe3022c4, type: 3}
-    - target: {fileID: 8425442670806299679, guid: e9e592c27d7f2624a80f707d4a4fd0c8, type: 3}
-      propertyPath: m_PixelsPerUnitMultiplier
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1205,15 +1179,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1163238742528173200, guid: e9e592c27d7f2624a80f707d4a4fd0c8, type: 3}
       propertyPath: m_fontColor.b
-      value: 0.28627452
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1163238742528173200, guid: e9e592c27d7f2624a80f707d4a4fd0c8, type: 3}
       propertyPath: m_fontColor.g
-      value: 0.80784315
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1163238742528173200, guid: e9e592c27d7f2624a80f707d4a4fd0c8, type: 3}
       propertyPath: m_fontColor.r
-      value: 0.90588236
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1163238742528173200, guid: e9e592c27d7f2624a80f707d4a4fd0c8, type: 3}
       propertyPath: m_fontSizeBase
@@ -1221,7 +1195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1163238742528173200, guid: e9e592c27d7f2624a80f707d4a4fd0c8, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4283027175
+      value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 5996294414166890183, guid: e9e592c27d7f2624a80f707d4a4fd0c8, type: 3}
       propertyPath: m_Name
@@ -1257,7 +1231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7855703029248062041, guid: e9e592c27d7f2624a80f707d4a4fd0c8, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 16
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7855703029248062041, guid: e9e592c27d7f2624a80f707d4a4fd0c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1306,14 +1280,6 @@ PrefabInstance:
     - target: {fileID: 7855703029248062041, guid: e9e592c27d7f2624a80f707d4a4fd0c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8425442670806299679, guid: e9e592c27d7f2624a80f707d4a4fd0c8, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: e231a33e70ec9594e907fb34fe3022c4, type: 3}
-    - target: {fileID: 8425442670806299679, guid: e9e592c27d7f2624a80f707d4a4fd0c8, type: 3}
-      propertyPath: m_PixelsPerUnitMultiplier
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -122,6 +122,50 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4170972361102049974, guid: 2c34cd170377d0347b06a46598aac09c, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170972361102049974, guid: 2c34cd170377d0347b06a46598aac09c, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
+      value: -1.9655186
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170972361102049974, guid: 2c34cd170377d0347b06a46598aac09c, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
+      value: 1.1352421
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170972361102049974, guid: 2c34cd170377d0347b06a46598aac09c, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
+      value: -2.2583966
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170972361102049974, guid: 2c34cd170377d0347b06a46598aac09c, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
+      value: -0.4122741
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170972361102049974, guid: 2c34cd170377d0347b06a46598aac09c, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
+      value: 2.2467551
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170972361102049974, guid: 2c34cd170377d0347b06a46598aac09c, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
+      value: -0.43033922
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170972361102049974, guid: 2c34cd170377d0347b06a46598aac09c, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
+      value: 2.2674127
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170972361102049974, guid: 2c34cd170377d0347b06a46598aac09c, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
+      value: 1.5802929
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170972361102049974, guid: 2c34cd170377d0347b06a46598aac09c, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].x
+      value: 2.2674127
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170972361102049974, guid: 2c34cd170377d0347b06a46598aac09c, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].y
+      value: 1.5802929
+      objectReference: {fileID: 0}
     - target: {fileID: 5112864507554467522, guid: 2c34cd170377d0347b06a46598aac09c, type: 3}
       propertyPath: m_Name
       value: TrainCompartment-Worker Variant
@@ -186,6 +230,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8009420381035319775, guid: 2c34cd170377d0347b06a46598aac09c, type: 3}
   m_PrefabInstance: {fileID: 8995241987809512767}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2608520248352555475 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6406044695329721580, guid: 2c34cd170377d0347b06a46598aac09c, type: 3}
+  m_PrefabInstance: {fileID: 8995241987809512767}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4188646462607590397 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5112864507554467522, guid: 2c34cd170377d0347b06a46598aac09c, type: 3}
@@ -203,9 +252,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 345cb56137b85444c80526c6a5afcef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  workerCapacity:
-    entries:
-    - key: 0
-      value: 1
-    - key: 1
-      value: 1
+  gfx: {fileID: 2608520248352555475}
+  baseNormalWorkerData:
+    WorkSpeed: 1
+    KillSpeed: 1
+    IsBusy: 0
+  baseArmedWorkerData:
+    WorkSpeed: 2
+    KillSpeed: 2
+    IsBusy: 0

@@ -45,7 +45,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.7075472, g: 0.5241064, b: 0.33041117, a: 0}
+  m_BackGroundColor: {r: 0.97647065, g: 0.90196085, b: 0.7960785, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -240,6 +240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3471369925487532415}
   - component: {fileID: 8597687873346669131}
+  - component: {fileID: 8454123915738306448}
   m_Layer: 0
   m_Name: CameraManager
   m_TagString: Untagged
@@ -278,3 +279,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followSpeed: 3
   followOffset: {x: 7, y: 3, z: 0}
+--- !u!114 &8454123915738306448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5837073229636871379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91290a895b271774184e82ad5f8c46d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

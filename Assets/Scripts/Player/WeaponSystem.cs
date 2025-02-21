@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI.Table;
 
 public class WeaponSystem : MonoBehaviour
 {
@@ -12,6 +11,7 @@ public class WeaponSystem : MonoBehaviour
 
     [SerializeField] private int damage;
     [SerializeField] private float fireRate;
+    [SerializeField] private GameObject muzzleFlash;
 
     private bool canShoot;
 
@@ -36,8 +36,12 @@ public class WeaponSystem : MonoBehaviour
         canShoot = false;
         Invoke("ResetShoot", fireRate);
 
-        if(PlayerDataManager.Instance.UseBullets(1))
+        if (PlayerDataManager.Instance.UseBullets(1))
+        {
+            CameraShake.Instance.ShakeObject(0.2f, ShakeMagnitude.Small);
+            Destroy(Instantiate(muzzleFlash, shootPos.position, shootPos.rotation), 1.0f);
             Instantiate(projectilePrefab, shootPos.position, shootPos.rotation).Initialize(damage);
+        }
     }
 
     private void ResetShoot()

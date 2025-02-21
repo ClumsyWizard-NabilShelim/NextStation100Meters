@@ -7,9 +7,11 @@ using Random = UnityEngine.Random;
 
 public class TrainCompartment : MonoBehaviour
 {
+    public CompartmentManagement Management { get; private set; }
+
     protected Train train;
     protected TrainHealthComponenet trainStats;
-    private Transform gfx;
+    [SerializeField] private Transform gfx;
 
     //Random Jitter
     private float timeBetweenJitter = 0.2f;
@@ -24,6 +26,8 @@ public class TrainCompartment : MonoBehaviour
     public virtual void Initialize(Train train)
     {
         this.train = train;
+        Management = GetComponent<CompartmentManagement>();
+        Management.Initialize(train);
         trainStats = GetComponent<TrainHealthComponenet>();
         trainStats.Initialize(train);
     }
