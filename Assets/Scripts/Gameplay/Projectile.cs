@@ -23,9 +23,11 @@ public class Projectile : MonoBehaviour
         if (col == null)
             return;
 
-        IDamageable damageable= col.GetComponent<IDamageable>();
+        IDamageable damageable = col.GetComponent<IDamageable>();
         if (damageable != null)
+        {
             damageable.Damage(damage);
+        }
 
         Destroy(gameObject);
     }

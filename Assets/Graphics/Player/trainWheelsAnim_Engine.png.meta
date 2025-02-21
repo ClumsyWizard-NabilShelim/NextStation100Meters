@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f6365e712732eb949a622cac15e54a80
+guid: 61538675a83bcc243b1ac103dee054ce
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -110,85 +110,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: engine
-      rect:
-        serializedVersion: 2
-        x: 427
-        y: 0
-        width: 184
-        height: 93
-      alignment: 9
-      pivot: {x: 0.5, y: 0.2}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 010645230a789f846bd5703e54d1afb5
-      internalID: -1434222837
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: worker
-      rect:
-        serializedVersion: 2
-        x: 282
-        y: 0
-        width: 145
-        height: 93
-      alignment: 9
-      pivot: {x: 0.5, y: 0.2}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c1b84a54cef1f546974f3ae0fbe9944
-      internalID: -1923904566
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cargo
-      rect:
-        serializedVersion: 2
-        x: 141
-        y: 0
-        width: 141
-        height: 93
-      alignment: 9
-      pivot: {x: 0.5, y: 0.2}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea12610d1c9d01b4badd363712a3bbf2
-      internalID: -356568799
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cargo_end
+      name: trainWheelsAnim_Engine_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 141
-        height: 93
-      alignment: 9
-      pivot: {x: 0.5, y: 0.2}
+        width: 192
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8140d7264f9cba4b90406400f6d9cd7
-      internalID: 44913634
+      spriteID: 48c46191cd1afce4498a45bf5e520806
+      internalID: -1585029431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trainWheelsAnim_Engine_1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 192
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b0f78aae5f58d944bdb3bde6802f1b9
+      internalID: -1715397950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trainWheelsAnim_Engine_2
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 192
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d20e8e97757cd1f47a681efaa5141217
+      internalID: 1557630967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trainWheelsAnim_Engine_3
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 192
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 360d5f0687708284cbcc20ab850e6407
+      internalID: 415492699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trainWheelsAnim_Engine_4
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 192
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb91526c8ed55ce4abacb81bd0023721
+      internalID: -1284010388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trainWheelsAnim_Engine_5
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 192
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f94e6064d5077e1458290a0af9108037
+      internalID: -107610552
       vertices: []
       indices: 
       edges: []
@@ -204,10 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cargo: -356568799
-      cargo_end: 44913634
-      engine: -1434222837
-      worker: -1923904566
+      trainWheelsAnim_Engine_0: -1585029431
+      trainWheelsAnim_Engine_1: -1715397950
+      trainWheelsAnim_Engine_2: 1557630967
+      trainWheelsAnim_Engine_3: 415492699
+      trainWheelsAnim_Engine_4: -1284010388
+      trainWheelsAnim_Engine_5: -107610552
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,0 +1,413 @@
+fileFormatVersion: 2
+guid: ff81a6773e3dd4b48b4266f79cea1fdc
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: raidersBomberbike_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 130
+        height: 95
+      alignment: 9
+      pivot: {x: 0.53238565, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de6613aa6eafec942b9bdb4b1b38f77c
+      internalID: -392452756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raidersBomberbike_1
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 130.46153
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5073112, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ba3f842e5896a7408a0ade1fb85c452
+      internalID: -1733608267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raidersBomberbike_2
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 0
+        width: 130.46153
+        height: 96
+      alignment: 9
+      pivot: {x: 0.49022546, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 775810321af4f2c478ad7c0918328015
+      internalID: 728613728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raidersBomberbike_3
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 0
+        width: 130.46153
+        height: 96
+      alignment: 9
+      pivot: {x: 0.48258188, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f04ece2520097e843baced7d2d07e101
+      internalID: -274126668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raidersBomberbike_4
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 0
+        width: 130.46153
+        height: 96
+      alignment: 9
+      pivot: {x: 0.46837124, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0432dd28e609ba248942f2c6319142c8
+      internalID: -62971547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raidersBomberbike_5
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 0
+        width: 130.46153
+        height: 96
+      alignment: 9
+      pivot: {x: 0.46106124, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fcef3e9618f39341bb8f0a542de53ba
+      internalID: 36842139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raidersBomberbike_6
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 0
+        width: 130.46153
+        height: 96
+      alignment: 9
+      pivot: {x: 0.43768, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c58ed0cf0baa53c469c07296888a54e0
+      internalID: -1197839814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raidersBomberbike_7
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 0
+        width: 130.46153
+        height: 96
+      alignment: 9
+      pivot: {x: 0.42255145, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a74a304e1511024ebf4af6f8608966b
+      internalID: -137227576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raidersBomberbike_8
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 0
+        width: 130.46153
+        height: 96
+      alignment: 9
+      pivot: {x: 0.4095221, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f2753c2223143a489c4893097a03774
+      internalID: -1186173414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raidersBomberbike_destroy_1
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 0
+        width: 130.46153
+        height: 96
+      alignment: 9
+      pivot: {x: 0.59444344, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68ca9af72d96eb14c99b166f34c5ce9c
+      internalID: 1728167027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raidersBomberbike_destroy_2
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 0
+        width: 130.46153
+        height: 96
+      alignment: 9
+      pivot: {x: 0.58321244, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6db71f1acb2d42d42a3f6a489ff0383d
+      internalID: -1970676863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raidersBomberbike_destroy_3
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 0
+        width: 130.46153
+        height: 96
+      alignment: 9
+      pivot: {x: 0.33643422, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e005e2db22710c641ae6377f012ceabd
+      internalID: 385746033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raidersBomberbike_destroy_4
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 0
+        width: 130.46153
+        height: 96
+      alignment: 9
+      pivot: {x: 0.35485965, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c32aad424bf51184e8f98061717bc4d3
+      internalID: 852421321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      raidersBomberbike_0: -392452756
+      raidersBomberbike_1: -1733608267
+      raidersBomberbike_2: 728613728
+      raidersBomberbike_3: -274126668
+      raidersBomberbike_4: -62971547
+      raidersBomberbike_5: 36842139
+      raidersBomberbike_6: -1197839814
+      raidersBomberbike_7: -137227576
+      raidersBomberbike_8: -1186173414
+      raidersBomberbike_destroy_1: 1728167027
+      raidersBomberbike_destroy_2: -1970676863
+      raidersBomberbike_destroy_3: 385746033
+      raidersBomberbike_destroy_4: 852421321
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

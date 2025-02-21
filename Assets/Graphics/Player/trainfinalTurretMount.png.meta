@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c20120a5ca776f946a43457b7405bdc2
+guid: 7173bfe19f2cf74439d261a61f1af085
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -110,43 +110,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlaceholderTurret_0
+      name: cargoend
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 112
+        y: 1
+        width: 141
+        height: 87
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e926d2d7d24dc0346be8023373838c53
-      internalID: -1574530574
+      spriteID: e5c1edc7cf9f79549a70e6d9d325e75c
+      internalID: 1805049122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlaceholderTurret_1
+      name: cargo
       rect:
         serializedVersion: 2
-        x: 33
-        y: 8
-        width: 30
-        height: 14
+        x: 253
+        y: 1
+        width: 141
+        height: 87
       alignment: 9
-      pivot: {x: 0.14, y: 0.5}
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8d176e5ec660f544bd0cd99ffe86fe0
-      internalID: 550493884
+      spriteID: 4f35a73e32399ec45b9815de51eb35e9
+      internalID: -1098480445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trainfinalTurretMount_0
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 1
+        width: 151
+        height: 87
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dd0bc50ec2bb954b9a6b36d21e76584
+      internalID: -628644906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trainfinalTurretMount_1
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 1
+        width: 184
+        height: 87
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6340ad25df1e6a942bf813df443f13cd
+      internalID: 1252533909
       vertices: []
       indices: 
       edges: []
@@ -162,8 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PlaceholderTurret_0: -1574530574
-      PlaceholderTurret_1: 550493884
+      cargo: -1098480445
+      cargoend: 1805049122
+      trainfinalTurretMount_0: -628644906
+      trainfinalTurretMount_1: 1252533909
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI.Table;
 
 public class WeaponSystem : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class WeaponSystem : MonoBehaviour
 
     [SerializeField] private int damage;
     [SerializeField] private float fireRate;
-    [SerializeField] private float offset;
 
     private bool canShoot;
 
@@ -25,7 +25,7 @@ public class WeaponSystem : MonoBehaviour
     {
         Vector2 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - turretHolder.position;
         float rot = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-        turretHolder.eulerAngles = new Vector3(0.0f, 0.0f, rot + offset);
+        turretHolder.eulerAngles = new Vector3(0.0f, 0.0f, rot);
     }
 
     private void OnShoot()

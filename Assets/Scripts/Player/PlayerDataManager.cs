@@ -67,6 +67,7 @@ public class PlayerDataManager : CW_Singleton<PlayerDataManager>
     public void AddBullets(int amount)
     {
         currentBullets += amount;
+        GameManager.Instance.BulletsEarned += amount;
         UpdateBulletUI();
     }
     public bool UseBullets(int amount)
@@ -74,6 +75,7 @@ public class PlayerDataManager : CW_Singleton<PlayerDataManager>
         if (currentBullets - amount < 0)
             return false;
 
+        GameManager.Instance.BulletsSpent += amount;
         currentBullets -= amount;
         UpdateBulletUI();
 
