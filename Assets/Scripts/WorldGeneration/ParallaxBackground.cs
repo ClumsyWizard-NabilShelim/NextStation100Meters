@@ -17,7 +17,7 @@ public class ParallaxBackground : MonoBehaviour
     {
         if (lastBackground.localPosition.x < distanceBeforeReorder)
         {
-            lastBackground.localPosition = transform.GetChild(2).localPosition + Vector3.right * backgroundSize;
+            lastBackground.localPosition = transform.GetChild(transform.childCount - 1).localPosition + Vector3.right * backgroundSize;
             lastBackground.SetAsLastSibling();
             lastBackground = transform.GetChild(0);
         }

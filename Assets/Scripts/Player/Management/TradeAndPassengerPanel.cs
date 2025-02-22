@@ -91,7 +91,7 @@ public class TradeAndPassengerPanel : ManagementPanel
 
         if(PlayerDataManager.Instance.UseBullets(totalCost))
         {
-            if(PlayerDataManager.Instance.Train.AddCargo(cargoType, amount))
+            if(PlayerDataManager.Instance.Train.AddCargo(cargoType, amount, false))
             {
                 StationManager.Instance.CurrentStation.RemoveCargo(cargoType, amount);
                 Open(); //Refresh UI

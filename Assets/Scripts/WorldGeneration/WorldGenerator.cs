@@ -35,8 +35,6 @@ public class WorldGenerator : CW_Singleton<WorldGenerator>
         }
 
         GameManager.Instance.OnStateChange += OnGameStateChange;
-
-        SpawnNewProps();
     }
 
     private void OnGameStateChange(GameState state)
@@ -54,9 +52,9 @@ public class WorldGenerator : CW_Singleton<WorldGenerator>
 
     private void Update()
     {
-        if(lastTrack.localPosition.x < distanceBeforeReorder)
+        if(lastTrack.position.x < distanceBeforeReorder)
         {
-            lastTrack.localPosition = trackHolder.GetChild(2).localPosition + Vector3.right * trackSize;
+            lastTrack.position = trackHolder.GetChild(trackHolder.childCount - 1).position + Vector3.right * trackSize;
             lastTrack.SetAsLastSibling();
             lastTrack = trackHolder.GetChild(0);
         }

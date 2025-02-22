@@ -21,8 +21,8 @@ public class Crates : MonoBehaviour, IDamageable
 
         if (currentHealth <= 0)
         {
-            PlayerDataManager.Instance.Train.AddCargo(CargoType.Metal, Random.Range(metalReward.x , metalReward.y + 1));
-            PlayerDataManager.Instance.Train.AddCargo(CargoType.Screw, Random.Range(screwReward.x, screwReward.y + 1));
+            PlayerDataManager.Instance.Train.AddCargo(CargoType.Metal, Random.Range(metalReward.x , metalReward.y + 1), true);
+            PlayerDataManager.Instance.Train.AddCargo(CargoType.Screw, Random.Range(screwReward.x, screwReward.y + 1), true);
             GameObject effect = Instantiate(destroyEffect, transform.position, Quaternion.identity);
             Destroy(effect, 2.0f);
             Destroy(gameObject);

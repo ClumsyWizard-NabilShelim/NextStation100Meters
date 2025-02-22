@@ -7,7 +7,8 @@ using Random = UnityEngine.Random;
 
 public enum GameState
 {
-    Initialize,
+    Init,
+    MainMenu,
     Travelling,
     UnderAttack,
     Station,
@@ -65,7 +66,7 @@ public class GameManager : CW_Singleton<GameManager>
     {
         CurrentWorldSpeed = worldSpeed;
         train = GameObject.FindGameObjectWithTag("Train").transform;
-        SetState(GameState.Travelling);
+        SetState(GameState.MainMenu);
 
         retryButton.SetClickEvent(() =>
         {
@@ -73,7 +74,7 @@ public class GameManager : CW_Singleton<GameManager>
         });
         mainMenuButton.SetClickEvent(() =>
         {
-            CW_SceneManagement.Instance.Load("MainMenu");
+            CW_SceneManagement.Instance.Load("Level 1");
         });
     }
 
@@ -91,21 +92,6 @@ public class GameManager : CW_Singleton<GameManager>
 
                 if (currentTime > changeRate)
                     PlayerManagementMenu.Instance.OpenMenu();
-            }
-        }
-        else
-        {
-            if(currentTravelTime <= 0.0f)
-            {
-                if(State != GameState.UnderAttack)
-                {
-                    SetState(GameState.Station);
-                    return;
-                }
-            }
-            else
-            {
-                currentTravelTime -= Time.deltaTime;
             }
         }
 
@@ -126,6 +112,22 @@ public class GameManager : CW_Singleton<GameManager>
                 currentCombatDelayTime -= Time.deltaTime;
             }
         }
+
+        if(State == GameState.Travelling || State == GameState.UnderAttack)
+        {
+            if (currentTravelTime <= 0.0f)
+            {
+                if (State != GameState.UnderAttack)
+                {
+                    SetState(GameState.Station);
+                    return;
+                }
+            }
+            else
+            {
+                currentTravelTime -= Time.deltaTime;
+            }
+        }
     }
 
     public void SetState(GameState state)
@@ -136,7 +138,11 @@ public class GameManager : CW_Singleton<GameManager>
         GameState previousState = State;
         State = state;
 
-        if (state == GameState.Station)
+        if(state == GameState.MainMenu)
+        {
+            CurrentWorldSpeed = 0.0f;
+        }
+        else if (state == GameState.Station)
         {
             StationManager.Instance.SpawnNewStation();
             changeRate = (2 * StationManager.Instance.CurrentStation.transform.position.x) / worldSpeed;

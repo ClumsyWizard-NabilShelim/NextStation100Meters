@@ -49,6 +49,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5800981418762297291, guid: c34fff387a4d9144fb94b760ce3c2809, type: 3}
+      propertyPath: speed
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800981418762297291, guid: c34fff387a4d9144fb94b760ce3c2809, type: 3}
       propertyPath: damageLayer.m_Bits
       value: 256
       objectReference: {fileID: 0}

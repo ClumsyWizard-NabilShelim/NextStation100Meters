@@ -41,9 +41,9 @@ public class KickPassengerMenu : MonoBehaviour, IPointerEnterHandler, IPointerEx
             if (currentSelectedAmount == 0)
                 return;
 
-
             train.AddPassengerStat(StatType.Anger, (int)((currentSelectedAmount / (float)train.GetCargoCount(CargoType.Passenger)*100)));
             train.RemovePassengerData(currentSelectedAmount);
+            StatPopUpManager.Instance.ShowStatPopUp(transform.position, $"-{currentSelectedAmount}<sprite={(int)Icon.Passenger}>", StatPopUpColor.Red);
             currentSelectedAmount = 0;
             container.SetActive(false);
         });

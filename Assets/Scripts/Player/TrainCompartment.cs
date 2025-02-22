@@ -38,6 +38,7 @@ public class TrainCompartment : MonoBehaviour
         {
             gfx.transform.localPosition = Vector2.zero;
             gfx.transform.localPosition = Random.insideUnitCircle * jitterStrength;
+            currentTime = timeBetweenJitter;
         }
         else
         {

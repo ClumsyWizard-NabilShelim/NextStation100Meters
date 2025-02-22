@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 963c4ed2b08795d4eb00dd3ae1ce327a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 6892786237725699830}
   startingBullets: 100
   startingMetals: 75
   startingScrews: 75
@@ -260,7 +261,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -44.7}
+  m_AnchoredPosition: {x: 0, y: -34.3}
   m_SizeDelta: {x: 100, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1236353205510552278
@@ -868,13 +869,42 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 289945199504481452, guid: 7d999df61ba02414bb8c9f266e2965c2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6695826511792182042}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 289945199504481451, guid: 7d999df61ba02414bb8c9f266e2965c2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6892786237725699830}
   m_SourcePrefab: {fileID: 100100000, guid: 7d999df61ba02414bb8c9f266e2965c2, type: 3}
 --- !u!224 &6150172795978758491 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 289945198369087267, guid: 7d999df61ba02414bb8c9f266e2965c2, type: 3}
   m_PrefabInstance: {fileID: 5863644991419262584}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6150172797097245395 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 289945199504481451, guid: 7d999df61ba02414bb8c9f266e2965c2, type: 3}
+  m_PrefabInstance: {fileID: 5863644991419262584}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6892786237725699830
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6150172797097245395}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 642efdbe53fa9f243ba39e8ba972aaff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!224 &6150172797097245396 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 289945199504481452, guid: 7d999df61ba02414bb8c9f266e2965c2, type: 3}

@@ -1,3 +1,4 @@
+using ClumsyWizard.Audio;
 using ClumsyWizard.Utilities;
 using System;
 using System.Collections;
@@ -50,6 +51,7 @@ public class RepairData
 
 public class Train : MonoBehaviour
 {
+    private CW_AudioPlayer audioPlayer;
     public WeaponSystem WeaponSystem { get; private set; }
 
     [Header("Upgrade")]
@@ -110,6 +112,9 @@ public class Train : MonoBehaviour
 
         GameManager.Instance.OnStateChange += (GameState state) =>
         {
+            if(state == GameState.Travelling)
+
+
             if (state == GameState.Station)
                 ProcessPassengerDetails();
         };
@@ -212,6 +217,7 @@ public class Train : MonoBehaviour
     public void Damage(int amount)
     {
         currentHullIntegrity -= amount;
+
         if (currentHullIntegrity < 0)
         {
             currentHullIntegrity = 0;
@@ -255,6 +261,7 @@ public class Train : MonoBehaviour
         if (passengerState.ContainsKey(type))
         {
             passengerState[type] += amount;
+            StatPopUpManager.Instance.ShowStatPopUp(transform.position, $"+{amount}<sprite={(int)Icon.Anger}>", StatPopUpColor.Red);
             if (passengerState[type] >= 100)
             {
                 if(type == StatType.Anger)
@@ -280,6 +287,7 @@ public class Train : MonoBehaviour
             return;
 
         passengerState[type] -= amount;
+        StatPopUpManager.Instance.ShowStatPopUp(transform.position, $"-{amount}<sprite={(int)Icon.Anger}>", StatPopUpColor.Red);
         if (passengerState[type] < 0)
             passengerState[type] = 0;
 
@@ -299,23 +307,74 @@ public class Train : MonoBehaviour
         passengerDetails.Add(details);
         PlayerDataManager.Instance.AddBullets(details.Count * details.Fee);
         GameManager.Instance.PassengersCarried += count;
-        AddCargo(CargoType.Passenger, count);
+        AddCargo(CargoType.Passenger, count, false);
     }
-    public bool AddCargo(CargoType type, int amount)
+    public bool AddCargo(CargoType type, int amount, bool addMaxPossible)
     {
-        if (amount > (type == CargoType.Passenger ? GetPassengerCapacity() : GetResourceCapacity()))
-            return false;
-
-        if (cargo.ContainsKey(type))
+        if (amount > (type == CargoType.Passenger ? GetPassengerCapacity() : GetResourceCapacity(type)))
         {
-            if (cargo[type] + amount > (type == CargoType.Passenger ? GetPassengerCapacity() : GetResourceCapacity()))
+            if(addMaxPossible)
+            {
+                int amountToAdd = type == CargoType.Passenger ? GetPassengerCapacity() : GetResourceCapacity(type);
+                StatPopUpManager.Instance.ShowStatPopUp(engineCompartment.transform.position, $"+{amountToAdd - cargo[type]}<sprite={(int)(type == CargoType.Passenger ? Icon.Passenger : type == CargoType.Metal ? Icon.Metal : Icon.Screw)}>", StatPopUpColor.Green);
+                cargo[type] = amountToAdd;
+            }
+            else
+            {
                 return false;
-
-            cargo[type] += amount;
+            }
         }
-        else
         {
-            cargo.Add(type, amount); 
+            if (cargo.ContainsKey(type))
+            {
+                if (type == CargoType.Passenger)
+                {
+                    if (cargo[type] + amount > GetPassengerCapacity())
+                    {
+                        if (addMaxPossible)
+                        {
+                            int amountToAdd = GetPassengerCapacity();
+                            StatPopUpManager.Instance.ShowStatPopUp(engineCompartment.transform.position, $"+{amountToAdd - cargo[type]}<sprite={(int)(type == CargoType.Passenger ? Icon.Passenger : type == CargoType.Metal ? Icon.Metal : Icon.Screw)}>", StatPopUpColor.Green);
+                            cargo[type] = amountToAdd;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        cargo[type] += amount;
+                        StatPopUpManager.Instance.ShowStatPopUp(engineCompartment.transform.position, $"+{amount}<sprite={(int)(type == CargoType.Passenger ? Icon.Passenger : type == CargoType.Metal ? Icon.Metal : Icon.Screw)}>", StatPopUpColor.Green);
+                    }
+                }
+                if (type == CargoType.Metal || type == CargoType.Screw)
+                {
+                    if (cargo[type] + amount > GetResourceCapacity(type))
+                    {
+                        if (addMaxPossible)
+                        {
+                            int amountToAdd = GetResourceCapacity(type);
+                            StatPopUpManager.Instance.ShowStatPopUp(engineCompartment.transform.position, $"+{amountToAdd - cargo[type]}<sprite={(int)(type == CargoType.Passenger ? Icon.Passenger : type == CargoType.Metal ? Icon.Metal : Icon.Screw)}>", StatPopUpColor.Green);
+                            cargo[type] = amountToAdd;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        cargo[type] += amount;
+                        StatPopUpManager.Instance.ShowStatPopUp(engineCompartment.transform.position, $"+{amount}<sprite={(int)(type == CargoType.Passenger ? Icon.Passenger : type == CargoType.Metal ? Icon.Metal : Icon.Screw)}>", StatPopUpColor.Green);
+                    }
+                }     
+            }
+            else
+            {
+                cargo.Add(type, amount);
+                StatPopUpManager.Instance.ShowStatPopUp(engineCompartment.transform.position, $"+{amount}<sprite={(int)(type == CargoType.Passenger ? Icon.Passenger : type == CargoType.Metal ? Icon.Metal : Icon.Screw)}>", StatPopUpColor.Green);
+            }
         }
 
         if (type == CargoType.Passenger)
@@ -330,6 +389,7 @@ public class Train : MonoBehaviour
             return false;
 
         cargo[type] -= amount;
+        StatPopUpManager.Instance.ShowStatPopUp(engineCompartment.transform.position, $"-{amount}<sprite={(int)(type == CargoType.Passenger ? Icon.Passenger : type == CargoType.Metal ? Icon.Metal : Icon.Screw)}>", StatPopUpColor.Red);
         if (type == CargoType.Passenger)
             UpdatePassengerStatUI();
 
@@ -360,7 +420,7 @@ public class Train : MonoBehaviour
         return total - (cargo[CargoType.Metal] + cargo[CargoType.Screw]);
     }
 
-    public int GetResourceCapacity()
+    public int GetResourceCapacity(CargoType type)
     {
         int total = cargoSpaceBonus;
         for (int i = 0; i < cargoCompartments.Count; i++)
@@ -368,7 +428,7 @@ public class Train : MonoBehaviour
             total += cargoCompartments[i].Capacity;
         }
 
-        return total - cargo[CargoType.Passenger];
+        return total - cargo[CargoType.Passenger] - (type == CargoType.Metal ? cargo[CargoType.Screw] : cargo[CargoType.Metal]);
     }
 
     //Upgrade

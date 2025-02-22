@@ -22,6 +22,24 @@ public class EnemyManager : CW_Singleton<EnemyManager>
     private int waveSize;
     private List<Enemy> enemies = new List<Enemy>();
 
+    private void Start()
+    {
+        GameManager.Instance.OnStateChange += (GameState state) =>
+        {
+            if (state == GameState.Over)
+            {
+                if (enemies.Count > 0)
+                {
+                    for (int i = enemies.Count - 1; i >= 0; i--)
+                    {
+                        enemies[i].Retreat();
+                        RemoveEnemy(enemies[i]);
+                    }
+                }
+            }
+        };
+    }
+
     public void StartWave()
     {
         waveSize = Random.Range(waveSizeRange.x, waveSizeRange.y + 1);

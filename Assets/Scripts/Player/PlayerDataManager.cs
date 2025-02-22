@@ -20,6 +20,7 @@ public enum CargoType
 
 public class PlayerDataManager : CW_Singleton<PlayerDataManager>
 {
+    [SerializeField] private Animator animator;
     public Train Train { get; private set; }
 
     [Header("Resources")]
@@ -50,9 +51,17 @@ public class PlayerDataManager : CW_Singleton<PlayerDataManager>
 
         Train.AddWorker(startingNormalWorkers);
 
-        Train.AddCargo(CargoType.Metal, startingMetals);
-        Train.AddCargo(CargoType.Screw, startingScrews);
-        Train.AddCargo(CargoType.Passenger, 0);
+        Train.AddCargo(CargoType.Metal, startingMetals, false);
+        Train.AddCargo(CargoType.Screw, startingScrews, false);
+        Train.AddCargo(CargoType.Passenger, 0, false);
+
+        GameManager.Instance.OnStateChange += (GameState state) =>
+        {
+            if (state == GameState.Travelling)
+                animator.SetTrigger("Show");
+            else if(state == GameState.Over)
+                animator.SetTrigger("Hide");
+        };
     }
 
     //Resource Management
@@ -93,8 +102,8 @@ public class PlayerDataManager : CW_Singleton<PlayerDataManager>
     }
     public void UpdateCargoUI()
     {
-        cargoAmountUI[CargoType.Screw].SetData($"{Train.GetCargoCount(CargoType.Screw)}/{Train.GetResourceCapacity()}");
-        cargoAmountUI[CargoType.Metal].SetData($"{Train.GetCargoCount(CargoType.Metal)}/{Train.GetResourceCapacity()}");
+        cargoAmountUI[CargoType.Screw].SetData($"{Train.GetCargoCount(CargoType.Screw)}/{Train.GetResourceCapacity(CargoType.Screw)}");
+        cargoAmountUI[CargoType.Metal].SetData($"{Train.GetCargoCount(CargoType.Metal)}/{Train.GetResourceCapacity(CargoType.Metal)}");
         cargoAmountUI[CargoType.Passenger].SetData($"{Train.GetCargoCount(CargoType.Passenger)}/{Train.GetPassengerCapacity()}");
     }
 }
