@@ -59,6 +59,11 @@ public class TradeSlot : MonoBehaviour
         this.cost = cost;
         this.onConfirm = onConfirm;
 
+        UpdateUI();
+    }
+
+    public void ResetCurrentCount()
+    {
         currentSelectedAmount = 0;
         UpdateUI();
     }

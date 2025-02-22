@@ -100,6 +100,22 @@ public class GameManager : CW_Singleton<GameManager>
             }
         }
 
+        if(State == GameState.Travelling || State == GameState.UnderAttack)
+        {
+            if (currentTravelTime <= 0.0f)
+            {
+                if (State != GameState.UnderAttack)
+                {
+                    SetState(GameState.Station);
+                    return;
+                }
+            }
+            else
+            {
+                currentTravelTime -= Time.deltaTime;
+            }
+        }
+
         if (State == GameState.Travelling)
         {
             if (currentTime <= changeRate)
@@ -115,22 +131,6 @@ public class GameManager : CW_Singleton<GameManager>
             else
             {
                 currentCombatDelayTime -= Time.deltaTime;
-            }
-        }
-
-        if(State == GameState.Travelling || State == GameState.UnderAttack)
-        {
-            if (currentTravelTime <= 0.0f)
-            {
-                if (State != GameState.UnderAttack)
-                {
-                    SetState(GameState.Station);
-                    return;
-                }
-            }
-            else
-            {
-                currentTravelTime -= Time.deltaTime;
             }
         }
     }

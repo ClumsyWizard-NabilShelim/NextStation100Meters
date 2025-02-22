@@ -4,13 +4,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class RepairSlot : MonoBehaviour
+public class RepairSlot : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] private Image iconImage;
     [SerializeField] private TextMeshProUGUI infoText;
-    [SerializeField] private CW_Button confirmButton;
 
     private string id;
     private Action<string> onConfirm;
@@ -22,9 +22,11 @@ public class RepairSlot : MonoBehaviour
 
         iconImage.sprite = icon;
         infoText.text = info;
-        confirmButton.SetClickEvent(() =>
-        {
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        if(eventData.button == PointerEventData.InputButton.Left)
             onConfirm?.Invoke(id);
-        });
     }
 }

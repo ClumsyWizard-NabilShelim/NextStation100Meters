@@ -100,6 +100,12 @@ public class TradeAndPassengerPanel : ManagementPanel
             if(PlayerDataManager.Instance.Train.AddCargo(cargoType, amount, false))
             {
                 audioPlayer.Play("Coin");
+
+                if (cargoType == CargoType.Metal)
+                    metalBuySlot.ResetCurrentCount();
+                else if(cargoType == CargoType.Screw)
+                    screwBuySlot.ResetCurrentCount();
+
                 StationManager.Instance.CurrentStation.RemoveCargo(cargoType, amount);
                 Open(); //Refresh UI
             }
@@ -120,6 +126,12 @@ public class TradeAndPassengerPanel : ManagementPanel
         PlayerDataManager.Instance.AddBullets(totalCost);
         PlayerDataManager.Instance.Train.RemoveCargo(cargoType, amount);
         StationManager.Instance.CurrentStation.AddCargo(cargoType, amount);
+
+        if (cargoType == CargoType.Metal)
+            metalSellSlot.ResetCurrentCount();
+        else if (cargoType == CargoType.Screw)
+            screwSellSlot.ResetCurrentCount();
+
         audioPlayer.Play("Coin");
         Open(); //Refresh UI
     }

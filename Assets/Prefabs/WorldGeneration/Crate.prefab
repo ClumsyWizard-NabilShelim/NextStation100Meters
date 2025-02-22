@@ -51,7 +51,7 @@ MonoBehaviour:
   bulletsReward: {x: 5, y: 20}
   metalReward: {x: 5, y: 15}
   screwReward: {x: 5, y: 15}
-  destroyEffect: {fileID: 3303646238470023396, guid: 3d1f38d798b855841b7e3cac1ed67ea7, type: 3}
+  destroyEffect: {fileID: 5755741326903030197, guid: 6958b4aff4e5c44d58f3e4b1dadf1d82, type: 3}
 --- !u!114 &1070271241295194162
 MonoBehaviour:
   m_ObjectHideFlags: 0

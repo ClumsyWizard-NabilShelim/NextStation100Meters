@@ -22,24 +22,6 @@ public class RepairsAndUpgradesPanel : ManagementPanel
     private void Start()
     {
         audioPlayer = GetComponent<CW_AudioPlayer>();
-        for (int i = 0; i < upgradeSos.Count; i++)
-        {
-            upgrades.Add(upgradeSos[i].Name, upgradeSos[i]);
-            string info = upgradeSos[i].Description + "\n";
-
-            if (upgradeSos[i].BulletCost > 0)
-                info += $"{upgradeSos[i].BulletCost} <sprite={(int)Icon.Bullet}> ";
-
-            if (upgradeSos[i].BulletCost > 0)
-                info += $" {upgradeSos[i].MetalCost} <sprite={(int)Icon.Metal}> ";
-
-            if (upgradeSos[i].BulletCost > 0)
-                info += $" {upgradeSos[i].ScrewCost} <sprite={(int)Icon.Screw}> ";
-
-            UpgradeSlot slot = Instantiate(upgradeSlotPrefab, upgradeSlotHolder);
-            slot.Initialize(upgradeSos[i].Name, upgradeSos[i].Icon, upgradeSos[i].Name, info, true, OnBuyUpgrade);
-            upgradeSlots.Add(upgradeSos[i].Name, slot);
-        }
     }
 
     public override void Open()
@@ -61,6 +43,45 @@ public class RepairsAndUpgradesPanel : ManagementPanel
         foreach (RepairData data in PlayerDataManager.Instance.Train.RequiredRepairs.Values)
         {
             Instantiate(repairSlotPrefab, repairSlotHolder).Initialize(data.ID, data.Icon, $"Repair the {data.Type.ToString().Replace("_", " ")} for\n {data.MetalCost} <sprite={(int)Icon.Metal}>  {data.ScrewCost} <sprite={(int)Icon.Screw}>", OnRepair);
+        }
+
+        CreateUpgradeSlots();
+    }
+
+    private void CreateUpgradeSlots()
+    {
+        if(upgradeSlotHolder.childCount > 0)
+        {
+            for(int i = upgradeSlotHolder.childCount - 1; i >= 0; i--)
+            {
+                Destroy(upgradeSlotHolder.GetChild(i).gameObject);
+            }
+        }
+
+        upgrades = new Dictionary<string, UpgradeDataSO>();
+        upgradeSlots = new Dictionary<string, UpgradeSlot>();
+
+        for (int i = 0; i < upgradeSos.Count; i++)
+        {
+            if (purchasedUpgrades.Contains(upgradeSos[i].Name))
+                continue;
+
+            upgrades.Add(upgradeSos[i].Name, upgradeSos[i]);
+            string info = upgradeSos[i].Description + "\n";
+
+            if (upgradeSos[i].BulletCost > 0)
+                info += $"{upgradeSos[i].BulletCost} <sprite={(int)Icon.Bullet}> ";
+
+            if (upgradeSos[i].BulletCost > 0)
+                info += $" {upgradeSos[i].MetalCost} <sprite={(int)Icon.Metal}> ";
+
+            if (upgradeSos[i].BulletCost > 0)
+                info += $" {upgradeSos[i].ScrewCost} <sprite={(int)Icon.Screw}> ";
+
+            UpgradeSlot slot = Instantiate(upgradeSlotPrefab, upgradeSlotHolder);
+            bool canBuy = PlayerDataManager.Instance.HasEnougBullets(upgradeSos[i].BulletCost) && PlayerDataManager.Instance.Train.HasEnoughCargo(CargoType.Metal, upgradeSos[i].MetalCost) && PlayerDataManager.Instance.Train.HasEnoughCargo(CargoType.Screw, upgradeSos[i].ScrewCost);
+            slot.Initialize(upgradeSos[i].Name, upgradeSos[i].Icon, upgradeSos[i].Name, info, canBuy, OnBuyUpgrade);
+            upgradeSlots.Add(upgradeSos[i].Name, slot);
         }
     }
 

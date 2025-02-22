@@ -41,7 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1340100153310724787}
   - component: {fileID: 8112893627692959544}
-  - component: {fileID: 7964935580743596045}
   m_Layer: 8
   m_Name: Shadow
   m_TagString: Untagged
@@ -104,7 +103,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1296139461
   m_SortingLayer: 1
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0d8f8702a9afed1499a89740953842d1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -116,20 +115,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7964935580743596045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8541345985039875737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17f788a324cd34d9489c62f72e70705f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alwaysUpdate: 1
-  childRenderer: {fileID: 0}
 --- !u!1001 &6025691674816998526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -145,7 +130,7 @@ PrefabInstance:
     - target: {fileID: -999440530843261441, guid: c9dfb41ed7ea22649992058a7ebdb1ad, type: 3}
       propertyPath: explosionEffect
       value: 
-      objectReference: {fileID: 6614054385379709013, guid: d888dc84879df324aa487265e57ac445, type: 3}
+      objectReference: {fileID: 1320519795793652042, guid: 5481863091f1240bd87c7d4e665f6557, type: 3}
     - target: {fileID: 348244023905030345, guid: c9dfb41ed7ea22649992058a7ebdb1ad, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

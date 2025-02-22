@@ -27,6 +27,7 @@ public class CompartmentManagement : MonoBehaviour
 {
     private CW_AudioPlayer audioPlayer;
     private Train train;
+    private TrainDecalManager decalManager;
     [SerializeField] private Transform popUpContainer;
     [SerializeField] private ManagementPopUp popUpPrefab;
     [SerializeField] protected Sprite repairIcon;
@@ -37,6 +38,7 @@ public class CompartmentManagement : MonoBehaviour
     public void Initialize(Train train)
     {
         audioPlayer = GetComponent<CW_AudioPlayer>();
+        decalManager = GetComponent<TrainDecalManager>();
         this.train = train;
     }
 
@@ -44,6 +46,7 @@ public class CompartmentManagement : MonoBehaviour
     {
         string info = $"{data.MetalCost}<sprite={(int)Icon.Metal}> {data.ScrewCost}<sprite={(int)Icon.Screw}>";
         repairPopUps.Add(data.ID, CreatePopUp(data.ID, data.TimeRequired, "Cost", info, repairIcon, StartRepair, CancelRepair));
+        decalManager.ActivateDamagedDecal();
     }
     public void RemoveRepairPopUp(string id)
     {
@@ -51,6 +54,7 @@ public class CompartmentManagement : MonoBehaviour
         {
             Destroy(repairPopUps[id].gameObject);
             repairPopUps.Remove(id);
+            decalManager.ActivateRepairedDecal();
         }
     }
 

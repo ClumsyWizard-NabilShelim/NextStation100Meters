@@ -33,7 +33,7 @@ public class EnemyHealthComponenet : MonoBehaviour, IDamageable
 
     public void DestroyEffect()
     {
-        Destroy(Instantiate(explosionEffect, transform.position, explosionEffect.transform.rotation), 1.0f);
+        Destroy(Instantiate(explosionEffect, transform.position, explosionEffect.transform.rotation), 2.0f);
         CameraShake.Instance.ShakeObject(0.1f, ShakeMagnitude.Small);
     }
 }

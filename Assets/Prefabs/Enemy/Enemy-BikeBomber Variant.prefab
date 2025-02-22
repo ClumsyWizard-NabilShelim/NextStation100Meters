@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7109354242680011120}
   - component: {fileID: 6295980901996622565}
   - component: {fileID: 6105496843931008096}
+  - component: {fileID: 909465154794497944}
   m_Layer: 8
   m_Name: Biker
   m_TagString: Untagged
@@ -70,11 +71,58 @@ MonoBehaviour:
   jumpToTargetTime: 0.3
   damage: 25
   damageRadius: 2
-  exlpodeDelay: 5
+  exlpodeDelay: 3
   damageLayer:
     serializedVersion: 2
     m_Bits: 264
-  explosionEffect: {fileID: 6614054385379709013, guid: d888dc84879df324aa487265e57ac445, type: 3}
+  explosionEffect: {fileID: 5755741326903030197, guid: d2ad6a82d0dab43cbaa01a188c48ae23, type: 3}
+  bloodEffect: {fileID: 6010047270877501240, guid: 85b4f190c784c4f8bb05977822d0b063, type: 3}
+  col: {fileID: 909465154794497944}
+--- !u!61 &909465154794497944
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5400506075557165487}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.238816, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.522368, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &7194510723919991482
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,6 +230,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -999440530843261441, guid: c9dfb41ed7ea22649992058a7ebdb1ad, type: 3}
+      propertyPath: explosionEffect
+      value: 
+      objectReference: {fileID: 5755741326903030197, guid: d2ad6a82d0dab43cbaa01a188c48ae23, type: 3}
     - target: {fileID: 348244023905030345, guid: c9dfb41ed7ea22649992058a7ebdb1ad, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.86
