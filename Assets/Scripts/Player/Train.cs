@@ -86,6 +86,7 @@ public class Train : MonoBehaviour
 
     public void Initialize()
     {
+        audioPlayer = GetComponent<CW_AudioPlayer>();
         WeaponSystem= GetComponentInChildren<WeaponSystem>();
 
         engineCompartment.Initialize(this);
@@ -112,11 +113,12 @@ public class Train : MonoBehaviour
 
         GameManager.Instance.OnStateChange += (GameState state) =>
         {
-            if(state == GameState.Travelling)
-
-
-            if (state == GameState.Station)
+            if (state == GameState.Travelling)
+                audioPlayer.Play("Train");
+            else if (state == GameState.Station)
                 ProcessPassengerDetails();
+            else if(state == GameState.Over)
+                audioPlayer.Stop("Train");
         };
     }
 
@@ -321,6 +323,7 @@ public class Train : MonoBehaviour
             }
             else
             {
+                StatPopUpManager.Instance.ShowStatPopUp(engineCompartment.transform.position, $"No Space to add <sprite={(int)(type == CargoType.Passenger ? Icon.Passenger : type == CargoType.Metal ? Icon.Metal : Icon.Screw)}>", StatPopUpColor.Red);StatPopUpManager.Instance.ShowStatPopUp(engineCompartment.transform.position, $"No Space to add <sprite={(int)(type == CargoType.Passenger ? Icon.Passenger : type == CargoType.Metal ? Icon.Metal : Icon.Screw)}>", StatPopUpColor.Red);
                 return false;
             }
         }
@@ -339,6 +342,7 @@ public class Train : MonoBehaviour
                         }
                         else
                         {
+                            StatPopUpManager.Instance.ShowStatPopUp(engineCompartment.transform.position, $"No Space to add <sprite={(int)(type == CargoType.Passenger ? Icon.Passenger : type == CargoType.Metal ? Icon.Metal : Icon.Screw)}>", StatPopUpColor.Red); StatPopUpManager.Instance.ShowStatPopUp(engineCompartment.transform.position, $"No Space to add <sprite={(int)(type == CargoType.Passenger ? Icon.Passenger : type == CargoType.Metal ? Icon.Metal : Icon.Screw)}>", StatPopUpColor.Red);
                             return false;
                         }
                     }
@@ -360,6 +364,7 @@ public class Train : MonoBehaviour
                         }
                         else
                         {
+                            StatPopUpManager.Instance.ShowStatPopUp(engineCompartment.transform.position, $"No Space to add <sprite={(int)(type == CargoType.Passenger ? Icon.Passenger : type == CargoType.Metal ? Icon.Metal : Icon.Screw)}>", StatPopUpColor.Red); StatPopUpManager.Instance.ShowStatPopUp(engineCompartment.transform.position, $"No Space to add <sprite={(int)(type == CargoType.Passenger ? Icon.Passenger : type == CargoType.Metal ? Icon.Metal : Icon.Screw)}>", StatPopUpColor.Red);
                             return false;
                         }
                     }

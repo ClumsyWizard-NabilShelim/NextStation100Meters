@@ -68,6 +68,7 @@ public class PlayerDataManager : CW_Singleton<PlayerDataManager>
     public void AddBullets(int amount)
     {
         currentBullets += amount;
+        StatPopUpManager.Instance.ShowStatPopUp(Train.transform.position, $"+{amount} <sprite={(int)Icon.Bullet}>", StatPopUpColor.Green);
         GameManager.Instance.BulletsEarned += amount;
         UpdateBulletUI();
     }

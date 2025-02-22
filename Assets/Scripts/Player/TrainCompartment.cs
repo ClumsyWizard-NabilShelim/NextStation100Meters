@@ -14,7 +14,6 @@ public class TrainCompartment : MonoBehaviour
     [SerializeField] private Transform gfx;
 
     //Random Jitter
-    private float timeBetweenJitter = 0.2f;
     private float jitterStrength = 0.02f;
     private float currentTime;
 
@@ -38,7 +37,6 @@ public class TrainCompartment : MonoBehaviour
         {
             gfx.transform.localPosition = Vector2.zero;
             gfx.transform.localPosition = Random.insideUnitCircle * jitterStrength;
-            currentTime = timeBetweenJitter;
         }
         else
         {

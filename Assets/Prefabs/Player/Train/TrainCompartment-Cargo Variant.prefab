@@ -1413,7 +1413,7 @@ PrefabInstance:
       addedObject: {fileID: 6085184507432812457}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5112864507554467522, guid: 2c34cd170377d0347b06a46598aac09c, type: 3}
-      insertIndex: -1
+      insertIndex: 4
       addedObject: {fileID: 6459063306353908783}
   m_SourcePrefab: {fileID: 100100000, guid: 2c34cd170377d0347b06a46598aac09c, type: 3}
 --- !u!4 &1437397646698536160 stripped
@@ -1444,6 +1444,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gfx: {fileID: 2608520248352555475}
-  <Capacity>k__BackingField: 200
+  <Capacity>k__BackingField: 300
   endSprite: {fileID: 1805049122, guid: 7173bfe19f2cf74439d261a61f1af085, type: 3}
   centerSprite: {fileID: -1098480445, guid: 7173bfe19f2cf74439d261a61f1af085, type: 3}

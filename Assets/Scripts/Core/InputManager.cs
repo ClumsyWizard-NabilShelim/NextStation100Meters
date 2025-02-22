@@ -13,10 +13,10 @@ public class InputManager : CW_Persistant<InputManager>, ISceneLoadEvent
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (CW_HUDMenuManager.Instance.IsAnyMenuOpen)
-                CW_HUDMenuManager.Instance.CloseLastMenu();
-            else
-                OnPause?.Invoke();
+            //if (CW_HUDMenuManager.Instance.IsAnyMenuOpen)
+            //    CW_HUDMenuManager.Instance.CloseLastMenu();
+            //else
+            //    OnPause?.Invoke();
         }
 
         if(Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())

@@ -1,4 +1,5 @@
-﻿using ClumsyWizard.UI;
+﻿using ClumsyWizard.Audio;
+using ClumsyWizard.UI;
 using System;
 using System.Collections;
 using TMPro;
@@ -6,6 +7,7 @@ using UnityEngine;
 
 public class TradeSlot : MonoBehaviour
 {
+    private CW_AudioPlayer audioPlayer;
     private CargoType cargotType;
     [SerializeField] private CW_Button decreaseButton;
     [SerializeField] private CW_Button increaseButton;
@@ -22,8 +24,10 @@ public class TradeSlot : MonoBehaviour
 
     private void Start()
     {
+        audioPlayer = GetComponent<CW_AudioPlayer>();
         decreaseButton.SetClickEvent(() =>
         {
+            audioPlayer.Play("Click");
             currentSelectedAmount--;
             if (currentSelectedAmount < 0)
                 currentSelectedAmount = 0;
@@ -33,6 +37,7 @@ public class TradeSlot : MonoBehaviour
 
         increaseButton.SetClickEvent(() =>
         {
+            audioPlayer.Play("Click");
             currentSelectedAmount++;
             if (currentSelectedAmount > stock)
                 currentSelectedAmount = stock;

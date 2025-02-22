@@ -397,7 +397,7 @@ MonoBehaviour:
   trackHolder: {fileID: 4177682787004322175}
   trackSize: 30
   distanceBeforeReorder: -75
-  crateSpawnRate: 5
+  crateSpawnRate: 10
   cratePrefab: {fileID: 410100524435033308, guid: 0cd9f718d8ddc6b469877c1e0abb4ca8, type: 3}
   props:
   - {fileID: 2864552497524588350, guid: d78d6b2c6842d456fbb1c6ff18cb7e4c, type: 3}

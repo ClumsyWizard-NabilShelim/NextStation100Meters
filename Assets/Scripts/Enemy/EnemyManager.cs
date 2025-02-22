@@ -50,7 +50,8 @@ public class EnemyManager : CW_Singleton<EnemyManager>
 
         for (int i = 0; i < waveSize; i++)
         {
-            CreateEnemy(i % 2 == 0);
+            if (!CreateEnemy(i % 2 == 0))
+                break;
         }
     }
 
@@ -81,13 +82,13 @@ public class EnemyManager : CW_Singleton<EnemyManager>
     }
 
     //Helper functions
-    private void CreateEnemy(bool restricted)
+    private bool CreateEnemy(bool restricted)
     {
         Enemy enemy = null;
         Transform target = GetTargetPoint(restricted);
 
         if (target == null)
-            return;
+            return false;
 
         if (restricted)
             enemy = Instantiate(restrictedEnemies[Random.Range(0, restrictedEnemies.Count)], spawnPointHolder.GetChild(Random.Range(0, spawnPointHolder.childCount)).position, Quaternion.identity);
@@ -96,6 +97,8 @@ public class EnemyManager : CW_Singleton<EnemyManager>
 
         enemies.Add(enemy);
         enemy.Initialize(target.position);
+
+        return true;
     }
     private Transform GetTargetPoint(bool restricted)
     {

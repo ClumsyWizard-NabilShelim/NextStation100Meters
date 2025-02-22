@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using ClumsyWizard.Audio;
+using System.Collections;
 using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
+    protected CW_AudioPlayer audioPlayer;
     protected Animator animator;
     protected EnemyHealthComponenet enemyStats;
     private Vector2 targetPosition;
@@ -14,6 +16,7 @@ public abstract class Enemy : MonoBehaviour
 
     public virtual void Initialize(Vector2 targetPosition)
     {
+        audioPlayer = GetComponent<CW_AudioPlayer>();
         animator = GetComponent<Animator>();
 
         this.targetPosition = targetPosition;

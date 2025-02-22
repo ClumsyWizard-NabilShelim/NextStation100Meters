@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 2531477764292204794}
   - component: {fileID: 4170972361102049974}
   - component: {fileID: 7702548998111646073}
+  - component: {fileID: 1734912290473240652}
   m_Layer: 3
   m_Name: TrainCompartment
   m_TagString: Untagged
@@ -212,7 +213,36 @@ MonoBehaviour:
   popUpContainer: {fileID: 2122783683811918984}
   popUpPrefab: {fileID: 6113146202893081769, guid: e192f1f80fee4f04b8a074ba5741d845, type: 3}
   repairIcon: {fileID: 93804037, guid: ad12e7b631cbd404a9ca4e7a1bd981dd, type: 3}
-  infectedIcon: {fileID: -740416637, guid: ad12e7b631cbd404a9ca4e7a1bd981dd, type: 3}
+--- !u!114 &1734912290473240652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5112864507554467522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac5eeff878f2b145b9c2b9d48070fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioDatas:
+    entries:
+    - key: Click
+      value:
+        Data: {fileID: 11400000, guid: b769fb5c2f014f64a9bfaf0ac82fab4e, type: 2}
+        Loop: 0
+        PlayOnAwake: 0
+        InstantStop: 1
+        Multiplier: 0
+        AudioSource: {fileID: 0}
+    - key: Build
+      value:
+        Data: {fileID: 11400000, guid: ac4f1c3db7e68a0468cb10a3a0a984bd, type: 2}
+        Loop: 0
+        PlayOnAwake: 0
+        InstantStop: 1
+        Multiplier: 0
+        AudioSource: {fileID: 0}
 --- !u!1 &5828941172904109068
 GameObject:
   m_ObjectHideFlags: 0

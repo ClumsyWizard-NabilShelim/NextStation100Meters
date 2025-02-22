@@ -1,8 +1,11 @@
-﻿using System.Collections;
+﻿using ClumsyWizard.Audio;
+using System.Collections;
 using UnityEngine;
 
 public class WeaponSystem : MonoBehaviour
 {
+    private CW_AudioPlayer audioPlayer;
+
     [SerializeField] private Transform turretHolder;
     [SerializeField] private Transform shootPos;
     [SerializeField] private Projectile projectilePrefab;
@@ -17,6 +20,7 @@ public class WeaponSystem : MonoBehaviour
 
     private void Start()
     {
+        audioPlayer = GetComponent<CW_AudioPlayer>();
         canShoot = true;
         InputManager.Instance.OnShoot += OnShoot;
     }
@@ -38,6 +42,7 @@ public class WeaponSystem : MonoBehaviour
 
         if (PlayerDataManager.Instance.UseBullets(1))
         {
+            audioPlayer.Play("Shoot");
             CameraShake.Instance.ShakeObject(0.2f, ShakeMagnitude.Small);
             Destroy(Instantiate(muzzleFlash, shootPos.position, shootPos.rotation), 1.0f);
             Instantiate(projectilePrefab, shootPos.position, shootPos.rotation).Initialize(damage);

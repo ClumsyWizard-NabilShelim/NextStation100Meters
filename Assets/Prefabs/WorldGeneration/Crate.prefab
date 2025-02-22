@@ -47,9 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9477d24440ccd94ca724d9965702e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {x: 25, y: 75}
-  metalReward: {x: 35, y: 55}
-  screwReward: {x: 35, y: 55}
+  health: {x: 25, y: 50}
+  bulletsReward: {x: 5, y: 20}
+  metalReward: {x: 5, y: 15}
+  screwReward: {x: 5, y: 15}
   destroyEffect: {fileID: 3303646238470023396, guid: 3d1f38d798b855841b7e3cac1ed67ea7, type: 3}
 --- !u!114 &1070271241295194162
 MonoBehaviour:

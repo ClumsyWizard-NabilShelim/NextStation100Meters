@@ -1,3 +1,4 @@
+using ClumsyWizard.Audio;
 using ClumsyWizard.Core;
 using ClumsyWizard.UI;
 using System.Collections;
@@ -6,6 +7,7 @@ using UnityEngine;
 
 public class PlayerManagementMenu : CW_Singleton<PlayerManagementMenu>
 {
+    private CW_AudioPlayer audioPlayer;
     [SerializeField] private Animator animator;
     [SerializeField] private List<ManagementPanel> panels;
     [SerializeField] private CW_Button nextPanelButton;
@@ -16,6 +18,7 @@ public class PlayerManagementMenu : CW_Singleton<PlayerManagementMenu>
 
     private void Start()
     {
+        audioPlayer = GetComponent<CW_AudioPlayer>();
         for (int i = 0; i < panels.Count; i++)
         {
             panels[i].gameObject.SetActive(false);
@@ -26,6 +29,7 @@ public class PlayerManagementMenu : CW_Singleton<PlayerManagementMenu>
         //Button setup
         nextPanelButton.SetClickEvent(() =>
         {
+            audioPlayer.Play("Click");
             int index = panelIndex + 1;
 
             if (index >= panels.Count)
@@ -36,6 +40,7 @@ public class PlayerManagementMenu : CW_Singleton<PlayerManagementMenu>
 
         previousPanelButton.SetClickEvent(() =>
         {
+            audioPlayer.Play("Click");
             int index = panelIndex - 1;
 
             if (index < 0)
@@ -49,6 +54,7 @@ public class PlayerManagementMenu : CW_Singleton<PlayerManagementMenu>
 
     public void OpenMenu()
     {
+        audioPlayer.Play("Menu");
         animator.SetBool("Show", true);
         ShowPanel(0);
     }
@@ -64,6 +70,8 @@ public class PlayerManagementMenu : CW_Singleton<PlayerManagementMenu>
 
     public void CloseMenu()
     {
+        audioPlayer.Play("Click");
+        audioPlayer.Play("Menu");
         animator.SetBool("Show", false);
         GameManager.Instance.SetState(GameState.Travelling);
     }

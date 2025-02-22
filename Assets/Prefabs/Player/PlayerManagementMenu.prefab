@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8963095179528149117}
   - component: {fileID: 1559100711910490089}
+  - component: {fileID: 8278862082647783330}
   m_Layer: 0
   m_Name: PlayerManagementMenu
   m_TagString: Untagged
@@ -52,6 +53,36 @@ MonoBehaviour:
   nextPanelButton: {fileID: 8309540057732787088}
   previousPanelButton: {fileID: 6252068239387460561}
   closePanelButton: {fileID: 6186614075814693131}
+--- !u!114 &8278862082647783330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380408677570617268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac5eeff878f2b145b9c2b9d48070fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioDatas:
+    entries:
+    - key: Click
+      value:
+        Data: {fileID: 11400000, guid: b769fb5c2f014f64a9bfaf0ac82fab4e, type: 2}
+        Loop: 0
+        PlayOnAwake: 0
+        InstantStop: 1
+        Multiplier: 0
+        AudioSource: {fileID: 0}
+    - key: Menu
+      value:
+        Data: {fileID: 11400000, guid: 461020b7470df7940a73acaaa18e6725, type: 2}
+        Loop: 0
+        PlayOnAwake: 0
+        InstantStop: 1
+        Multiplier: 0
+        AudioSource: {fileID: 0}
 --- !u!1 &1420917175038334693
 GameObject:
   m_ObjectHideFlags: 0
@@ -2423,6 +2454,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8288893909331685442, guid: 5f50b6c85623b4d40a97534407f860ef, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6682158178532037714}
+    - targetCorrespondingSourceObject: {fileID: 8288893909331685442, guid: 5f50b6c85623b4d40a97534407f860ef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8885315807430504463}
   m_SourcePrefab: {fileID: 100100000, guid: 5f50b6c85623b4d40a97534407f860ef, type: 3}
 --- !u!224 &4606830358837978991 stripped
 RectTransform:
@@ -2461,6 +2495,36 @@ MonoBehaviour:
   takePassengerText: {fileID: 5355594893293059373}
   passengerContainer: {fileID: 3044475752461303628}
   noPassengerContainer: {fileID: 9215868377792103841}
+--- !u!114 &8885315807430504463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5692285486021407226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac5eeff878f2b145b9c2b9d48070fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioDatas:
+    entries:
+    - key: Click
+      value:
+        Data: {fileID: 11400000, guid: b769fb5c2f014f64a9bfaf0ac82fab4e, type: 2}
+        Loop: 0
+        PlayOnAwake: 0
+        InstantStop: 1
+        Multiplier: 0
+        AudioSource: {fileID: 0}
+    - key: Coin
+      value:
+        Data: {fileID: 11400000, guid: 5b9d9142865b77640a41d2426f1381c6, type: 2}
+        Loop: 0
+        PlayOnAwake: 0
+        InstantStop: 0
+        Multiplier: 0
+        AudioSource: {fileID: 0}
 --- !u!224 &6955417095920769708 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6733308718479219476, guid: 5f50b6c85623b4d40a97534407f860ef, type: 3}
@@ -2878,6 +2942,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8288893909331685442, guid: 5f50b6c85623b4d40a97534407f860ef, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8829484947826409944}
+    - targetCorrespondingSourceObject: {fileID: 8288893909331685442, guid: 5f50b6c85623b4d40a97534407f860ef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8474859213619690299}
   m_SourcePrefab: {fileID: 100100000, guid: 5f50b6c85623b4d40a97534407f860ef, type: 3}
 --- !u!224 &1035741372399830285 stripped
 RectTransform:
@@ -2924,6 +2991,36 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 132434b161312d54c816ba7cda18ab48, type: 2}
   - {fileID: 11400000, guid: 7c57364301ed4014ab9beae200f8266c, type: 2}
   upgradeSlotHolder: {fileID: 4195493892759826560}
+--- !u!114 &8474859213619690299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3998722719626592343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac5eeff878f2b145b9c2b9d48070fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioDatas:
+    entries:
+    - key: Build
+      value:
+        Data: {fileID: 11400000, guid: ac4f1c3db7e68a0468cb10a3a0a984bd, type: 2}
+        Loop: 0
+        PlayOnAwake: 0
+        InstantStop: 1
+        Multiplier: 0
+        AudioSource: {fileID: 0}
+    - key: Coin
+      value:
+        Data: {fileID: 11400000, guid: 5b9d9142865b77640a41d2426f1381c6, type: 2}
+        Loop: 0
+        PlayOnAwake: 0
+        InstantStop: 0
+        Multiplier: 0
+        AudioSource: {fileID: 0}
 --- !u!224 &5075523316610995906 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 151329806023272151, guid: 5f50b6c85623b4d40a97534407f860ef, type: 3}

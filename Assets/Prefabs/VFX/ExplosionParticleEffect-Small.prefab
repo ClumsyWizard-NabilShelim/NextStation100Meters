@@ -9785,6 +9785,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3097980988686485867}
+  - component: {fileID: 2345218241464023281}
   m_Layer: 0
   m_Name: ExplosionParticleEffect-Small
   m_TagString: Untagged
@@ -9812,6 +9813,28 @@ Transform:
   - {fileID: 5466060742744224822}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2345218241464023281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3303646238470023396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac5eeff878f2b145b9c2b9d48070fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioDatas:
+    entries:
+    - key: Explosion
+      value:
+        Data: {fileID: 11400000, guid: 38838935449eaf04aafdf87c0d3e2771, type: 2}
+        Loop: 0
+        PlayOnAwake: 1
+        InstantStop: 0
+        Multiplier: 0.3
+        AudioSource: {fileID: 0}
 --- !u!1 &6350812112887014711
 GameObject:
   m_ObjectHideFlags: 0

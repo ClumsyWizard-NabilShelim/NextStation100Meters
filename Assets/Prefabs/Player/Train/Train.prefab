@@ -211,6 +211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2880617657802552899}
   - component: {fileID: 749064404116670722}
+  - component: {fileID: 1243002266300207118}
   m_Layer: 0
   m_Name: WeaponSystem
   m_TagString: Untagged
@@ -253,6 +254,28 @@ MonoBehaviour:
   damage: 25
   fireRate: 0.1
   muzzleFlash: {fileID: 4547905047751414061, guid: 30098f0bf1dfcf04f9856233468680bd, type: 3}
+--- !u!114 &1243002266300207118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4401939692395022879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac5eeff878f2b145b9c2b9d48070fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioDatas:
+    entries:
+    - key: Shoot
+      value:
+        Data: {fileID: 11400000, guid: 62533c63caa4b4e4da352abb2ff63ecc, type: 2}
+        Loop: 0
+        PlayOnAwake: 0
+        InstantStop: 0
+        Multiplier: 0.4
+        AudioSource: {fileID: 0}
 --- !u!1 &5327538728716033133
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,6 +317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3760023911486878636}
   - component: {fileID: 7608428773151215239}
+  - component: {fileID: 5773350628923386483}
   m_Layer: 0
   m_Name: Train
   m_TagString: Train
@@ -349,6 +373,28 @@ MonoBehaviour:
       value: {fileID: 21300000, guid: 88e0d966139e207499d0e1dfbddf6b0d, type: 3}
     - key: 2
       value: {fileID: 21300000, guid: 66afb4b1eae57db46a0ef038bcbb9cf8, type: 3}
+--- !u!114 &5773350628923386483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8347587172488851565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac5eeff878f2b145b9c2b9d48070fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioDatas:
+    entries:
+    - key: Train
+      value:
+        Data: {fileID: 11400000, guid: c152668c2ac1ec8429d7fe0e9e5c4eaf, type: 2}
+        Loop: 1
+        PlayOnAwake: 0
+        InstantStop: 0
+        Multiplier: 0.2
+        AudioSource: {fileID: 0}
 --- !u!1001 &980866280104982018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -571,7 +617,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 724038255594546198, guid: e06bdb3b4a5b4094f9a6d40c29fb193b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6951908648443571570}
   m_SourcePrefab: {fileID: 100100000, guid: e06bdb3b4a5b4094f9a6d40c29fb193b, type: 3}
 --- !u!114 &3139589310651439361 stripped
 MonoBehaviour:
@@ -589,3 +638,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1437397646698536160, guid: e06bdb3b4a5b4094f9a6d40c29fb193b, type: 3}
   m_PrefabInstance: {fileID: 8228423977849193774}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8664205460288807224 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 724038255594546198, guid: e06bdb3b4a5b4094f9a6d40c29fb193b, type: 3}
+  m_PrefabInstance: {fileID: 8228423977849193774}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6951908648443571570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8664205460288807224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac5eeff878f2b145b9c2b9d48070fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioDatas:
+    entries:
+    - key: Click
+      value:
+        Data: {fileID: 11400000, guid: b769fb5c2f014f64a9bfaf0ac82fab4e, type: 2}
+        Loop: 0
+        PlayOnAwake: 0
+        InstantStop: 0
+        Multiplier: 0
+        AudioSource: {fileID: 0}

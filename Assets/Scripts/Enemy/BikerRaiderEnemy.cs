@@ -21,6 +21,7 @@ public class BikerRaiderEnemy : Enemy
 
     private void ThrowRider()
     {
+        audioPlayer.Play("Jump");
         rider.JumpToTarget(PlayerDataManager.Instance.Train.GetRandomPointOnBody());
         animator.SetTrigger("Destroy");
         Invoke("DestroyBike", 1.05f);

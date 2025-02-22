@@ -32,7 +32,7 @@ namespace ClumsyWizard.Audio
         //Fade out audio
         private List<AudioSource> backgroundAudioSources = new List<AudioSource>();
         private List<AudioVolumeLerpData> audiosToStop = new List<AudioVolumeLerpData>();
-        private float audioStopDuration = 1.0f;
+        private float audioStopDuration = 2.0f;
 
         private void Update()
         {

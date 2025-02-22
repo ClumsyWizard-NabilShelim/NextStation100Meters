@@ -1,3 +1,4 @@
+using ClumsyWizard.Audio;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,6 +25,7 @@ public class RepairingData
 
 public class CompartmentManagement : MonoBehaviour
 {
+    private CW_AudioPlayer audioPlayer;
     private Train train;
     [SerializeField] private Transform popUpContainer;
     [SerializeField] private ManagementPopUp popUpPrefab;
@@ -34,6 +36,7 @@ public class CompartmentManagement : MonoBehaviour
 
     public void Initialize(Train train)
     {
+        audioPlayer = GetComponent<CW_AudioPlayer>();
         this.train = train;
     }
 
@@ -72,6 +75,7 @@ public class CompartmentManagement : MonoBehaviour
 
     private void StartRepair(string id, float requiredTime)
     {
+        audioPlayer.Play("Click");
         Worker worker = train.GetWorker();
         if (worker != null)
         {
@@ -79,6 +83,7 @@ public class CompartmentManagement : MonoBehaviour
             {
                 worker.IsBusy = true;
                 repairingData.Add(new RepairingData(id, repairPopUps[id], requiredTime, worker));
+                audioPlayer.Play("Build");
             }
             else
             {
@@ -93,6 +98,7 @@ public class CompartmentManagement : MonoBehaviour
 
     private void CancelRepair(string id)
     {
+        audioPlayer.Play("Click");
         for (int i = 0; i < repairingData.Count; i++)
         {
             if (repairingData[i].ID == id)

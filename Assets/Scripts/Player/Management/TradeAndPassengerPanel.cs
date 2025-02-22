@@ -1,3 +1,4 @@
+using ClumsyWizard.Audio;
 using ClumsyWizard.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,6 +7,8 @@ using UnityEngine;
 
 public class TradeAndPassengerPanel : ManagementPanel
 {
+    private CW_AudioPlayer audioPlayer;
+
     [Header("Trade")]
     [SerializeField] private int metalSellCost;
     [SerializeField] private int screwSellCost;
@@ -34,6 +37,7 @@ public class TradeAndPassengerPanel : ManagementPanel
 
     private void Start()
     {
+        audioPlayer = GetComponent<CW_AudioPlayer>();
         GameManager.Instance.OnStateChange += (GameState state) =>
         {
             if (state == GameState.Station)
@@ -65,6 +69,7 @@ public class TradeAndPassengerPanel : ManagementPanel
 
         decreasePassengerButton.SetClickEvent(() =>
         {
+            audioPlayer.Play("Click");
             currentPassengerCount--;
             if (currentPassengerCount < 0)
                 currentPassengerCount = 0;
@@ -73,6 +78,7 @@ public class TradeAndPassengerPanel : ManagementPanel
         });
         increasePassengerButton.SetClickEvent(() =>
         {
+            audioPlayer.Play("Click");
             currentPassengerCount++;
             if (currentPassengerCount > maxPassengerTakeable)
                 currentPassengerCount = maxPassengerTakeable;
@@ -93,6 +99,7 @@ public class TradeAndPassengerPanel : ManagementPanel
         {
             if(PlayerDataManager.Instance.Train.AddCargo(cargoType, amount, false))
             {
+                audioPlayer.Play("Coin");
                 StationManager.Instance.CurrentStation.RemoveCargo(cargoType, amount);
                 Open(); //Refresh UI
             }
@@ -113,13 +120,14 @@ public class TradeAndPassengerPanel : ManagementPanel
         PlayerDataManager.Instance.AddBullets(totalCost);
         PlayerDataManager.Instance.Train.RemoveCargo(cargoType, amount);
         StationManager.Instance.CurrentStation.AddCargo(cargoType, amount);
-        
+        audioPlayer.Play("Coin");
         Open(); //Refresh UI
     }
 
     //Passenger
     private void TakePassengers()
     {
+        audioPlayer.Play("Click");
         PlayerDataManager.Instance.Train.AddPassengerDetials(currentPassengerCount, StationManager.Instance.CurrentStation.PassengerTravelDistance, passengerFee);
         newStation = false;
         Open(); //Refresh UI

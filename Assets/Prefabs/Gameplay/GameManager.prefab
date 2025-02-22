@@ -281,6 +281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1899799192046645157}
   - component: {fileID: 4785445981938298566}
+  - component: {fileID: 4594226530976152723}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -317,13 +318,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldSpeed: 6
-  travelDurationRange: {x: 45, y: 120}
-  timeBetweenCombatDurationRange: {x: 15, y: 35}
+  travelDurationRange: {x: 30, y: 40}
+  timeBetweenCombatDurationRange: {x: 5, y: 15}
   gameOverAnimator: {fileID: 372348439798078701}
   gameOverReasonText: {fileID: 2822076676397266992}
   statValuesText: {fileID: 8839447528679725604}
   retryButton: {fileID: 7641234467416441096}
   mainMenuButton: {fileID: 4980805781619298542}
+--- !u!114 &4594226530976152723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3731349130745026918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac5eeff878f2b145b9c2b9d48070fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioDatas:
+    entries:
+    - key: MainMenu
+      value:
+        Data: {fileID: 11400000, guid: 952357f2bc25a514cae058bafd33a17b, type: 2}
+        Loop: 1
+        PlayOnAwake: 1
+        InstantStop: 0
+        Multiplier: 0.4
+        AudioSource: {fileID: 0}
+    - key: Gameplay
+      value:
+        Data: {fileID: 11400000, guid: f3f9ae4324f64084b82bff6a724a1cb7, type: 2}
+        Loop: 1
+        PlayOnAwake: 0
+        InstantStop: 0
+        Multiplier: 0.2
+        AudioSource: {fileID: 0}
+    - key: GameOver
+      value:
+        Data: {fileID: 11400000, guid: c1ca9802d32c32340acf36f3859ec4c5, type: 2}
+        Loop: 1
+        PlayOnAwake: 0
+        InstantStop: 0
+        Multiplier: 0.4
+        AudioSource: {fileID: 0}
+    - key: Click
+      value:
+        Data: {fileID: 11400000, guid: b769fb5c2f014f64a9bfaf0ac82fab4e, type: 2}
+        Loop: 0
+        PlayOnAwake: 0
+        InstantStop: 1
+        Multiplier: 1
+        AudioSource: {fileID: 0}
 --- !u!1 &5598241874575430446
 GameObject:
   m_ObjectHideFlags: 0

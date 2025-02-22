@@ -1,3 +1,4 @@
+using ClumsyWizard.Audio;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,6 +6,7 @@ using UnityEngine;
 
 public class RepairsAndUpgradesPanel : ManagementPanel
 {
+    private CW_AudioPlayer audioPlayer;
     [Header("Repairs")]
     [SerializeField] private RepairSlot repairSlotPrefab;
     [SerializeField] private Transform repairSlotHolder;
@@ -19,6 +21,7 @@ public class RepairsAndUpgradesPanel : ManagementPanel
 
     private void Start()
     {
+        audioPlayer = GetComponent<CW_AudioPlayer>();
         for (int i = 0; i < upgradeSos.Count; i++)
         {
             upgrades.Add(upgradeSos[i].Name, upgradeSos[i]);
@@ -67,6 +70,7 @@ public class RepairsAndUpgradesPanel : ManagementPanel
 
         if (PlayerDataManager.Instance.Train.HasEnoughCargo(CargoType.Metal, data.MetalCost) && PlayerDataManager.Instance.Train.HasEnoughCargo(CargoType.Screw, data.ScrewCost))
         {
+            audioPlayer.Play("Build");
             PlayerDataManager.Instance.Train.RepairIssueAndChargeResource(id);
 
             Open();
@@ -86,8 +90,9 @@ public class RepairsAndUpgradesPanel : ManagementPanel
             PlayerDataManager.Instance.Train.RemoveCargo(CargoType.Screw, data.ScrewCost);
 
             purchasedUpgrades.Add(upgradeID);
+            audioPlayer.Play("Coin");
 
-            foreach(UpgradeType type in data.Upgrades.Keys)
+            foreach (UpgradeType type in data.Upgrades.Keys)
             {
                 if(type == UpgradeType.HullIntegrity)
                 {

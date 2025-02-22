@@ -266,6 +266,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy-RaiderCar Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8120762109492045836, guid: c9dfb41ed7ea22649992058a7ebdb1ad, type: 3}
+      propertyPath: audioDatas.entries.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120762109492045836, guid: c9dfb41ed7ea22649992058a7ebdb1ad, type: 3}
+      propertyPath: audioDatas.entries.Array.data[1].key
+      value: Shoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120762109492045836, guid: c9dfb41ed7ea22649992058a7ebdb1ad, type: 3}
+      propertyPath: audioDatas.entries.Array.data[0].value.Data
+      value: 
+      objectReference: {fileID: 11400000, guid: 436d7f4fd943cbb43b90d05af4b24415, type: 2}
+    - target: {fileID: 8120762109492045836, guid: c9dfb41ed7ea22649992058a7ebdb1ad, type: 3}
+      propertyPath: audioDatas.entries.Array.data[1].value.Data
+      value: 
+      objectReference: {fileID: 11400000, guid: 5bdbefff36f150d4bbd286d006b11934, type: 2}
+    - target: {fileID: 8120762109492045836, guid: c9dfb41ed7ea22649992058a7ebdb1ad, type: 3}
+      propertyPath: audioDatas.entries.Array.data[1].value.Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120762109492045836, guid: c9dfb41ed7ea22649992058a7ebdb1ad, type: 3}
+      propertyPath: audioDatas.entries.Array.data[0].value.Multiplier
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120762109492045836, guid: c9dfb41ed7ea22649992058a7ebdb1ad, type: 3}
+      propertyPath: audioDatas.entries.Array.data[1].value.Multiplier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120762109492045836, guid: c9dfb41ed7ea22649992058a7ebdb1ad, type: 3}
+      propertyPath: audioDatas.entries.Array.data[1].value.PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -325,7 +357,7 @@ MonoBehaviour:
   fireRate: 5
   timeBetweenShots: 0.1
   fireCoolDown: 1
-  damage: 1
+  damage: 3
   projectilePrefab: {fileID: 7892664731776260407, guid: 5fe8706516897944da427eb3530da711, type: 3}
   shootPoint: {fileID: 1605179052961609835}
   startShootDelayRange: {x: 2, y: 5}

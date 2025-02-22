@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpToTargetTime: 0.3
-  damage: 15
+  damage: 25
   damageRadius: 2
   exlpodeDelay: 5
   damageLayer:
@@ -270,6 +270,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy-BikeBomber Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8120762109492045836, guid: c9dfb41ed7ea22649992058a7ebdb1ad, type: 3}
+      propertyPath: audioDatas.entries.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120762109492045836, guid: c9dfb41ed7ea22649992058a7ebdb1ad, type: 3}
+      propertyPath: audioDatas.entries.Array.data[1].key
+      value: Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120762109492045836, guid: c9dfb41ed7ea22649992058a7ebdb1ad, type: 3}
+      propertyPath: audioDatas.entries.Array.data[0].value.Data
+      value: 
+      objectReference: {fileID: 11400000, guid: b08573fe2eddb2945b84533860ed658d, type: 2}
+    - target: {fileID: 8120762109492045836, guid: c9dfb41ed7ea22649992058a7ebdb1ad, type: 3}
+      propertyPath: audioDatas.entries.Array.data[1].value.Data
+      value: 
+      objectReference: {fileID: 11400000, guid: d18a03757ee14cc4ab37290518494bc3, type: 2}
+    - target: {fileID: 8120762109492045836, guid: c9dfb41ed7ea22649992058a7ebdb1ad, type: 3}
+      propertyPath: audioDatas.entries.Array.data[1].value.Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120762109492045836, guid: c9dfb41ed7ea22649992058a7ebdb1ad, type: 3}
+      propertyPath: audioDatas.entries.Array.data[0].value.Multiplier
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120762109492045836, guid: c9dfb41ed7ea22649992058a7ebdb1ad, type: 3}
+      propertyPath: audioDatas.entries.Array.data[1].value.Multiplier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120762109492045836, guid: c9dfb41ed7ea22649992058a7ebdb1ad, type: 3}
+      propertyPath: audioDatas.entries.Array.data[1].value.PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -324,7 +356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToTarget: 3
   rider: {fileID: 6105496843931008096}
-  delayBeforeJumpRange: {x: 5, y: 10}
+  delayBeforeJumpRange: {x: 3, y: 7}
 --- !u!4 &6610215990620126946 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 348244023905030345, guid: c9dfb41ed7ea22649992058a7ebdb1ad, type: 3}

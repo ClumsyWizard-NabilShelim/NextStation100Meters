@@ -1,3 +1,4 @@
+using ClumsyWizard.Audio;
 using ClumsyWizard.Core;
 using ClumsyWizard.UI;
 using System;
@@ -31,6 +32,7 @@ public enum Icon
 
 public class GameManager : CW_Singleton<GameManager>
 {
+    private CW_AudioPlayer audioPlayer;
     public float CurrentWorldSpeed { get; private set; }
     public GameState State { get; private set; }
     public Action<GameState> OnStateChange { get; set; }
@@ -64,16 +66,19 @@ public class GameManager : CW_Singleton<GameManager>
 
     private void Start()
     {
+        audioPlayer = GetComponent<CW_AudioPlayer>();
         CurrentWorldSpeed = worldSpeed;
         train = GameObject.FindGameObjectWithTag("Train").transform;
         SetState(GameState.MainMenu);
 
         retryButton.SetClickEvent(() =>
         {
+            audioPlayer.Play("Click");
             CW_SceneManagement.Instance.Reload();
         });
         mainMenuButton.SetClickEvent(() =>
         {
+            audioPlayer.Play("Click");
             CW_SceneManagement.Instance.Load("Level 1");
         });
     }
@@ -150,8 +155,9 @@ public class GameManager : CW_Singleton<GameManager>
         }
         else if (state == GameState.Travelling)
         {
-
-            if(previousState != GameState.UnderAttack)
+            audioPlayer.Play("Gameplay");
+            audioPlayer.Stop("MainMenu");
+            if (previousState != GameState.UnderAttack)
             {
                 changeRate = 3.0f; // Arbitrary number
                 currentTime = 0.0f;
@@ -163,6 +169,8 @@ public class GameManager : CW_Singleton<GameManager>
         else if(state == GameState.Over)
         {
             CurrentWorldSpeed = 0.0f;
+            audioPlayer.Stop("Gameplay");
+            audioPlayer.Play("GameOver");
         }
 
         OnStateChange?.Invoke(state);
