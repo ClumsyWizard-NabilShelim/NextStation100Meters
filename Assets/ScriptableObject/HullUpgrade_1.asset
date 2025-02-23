@@ -15,9 +15,9 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: 0}
   <Name>k__BackingField: Hull Integrity v1
   <Description>k__BackingField: Upgrade train hull to withstand more damage
-  <BulletCost>k__BackingField: 50
-  <MetalCost>k__BackingField: 25
-  <ScrewCost>k__BackingField: 15
+  <BulletCost>k__BackingField: 100
+  <MetalCost>k__BackingField: 80
+  <ScrewCost>k__BackingField: 40
   <Upgrades>k__BackingField:
     entries:
     - key: 0

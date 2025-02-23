@@ -14,12 +14,16 @@ public class EnemyManager : CW_Singleton<EnemyManager>
     [Header("Difficulty")]
     [SerializeField] private Vector2Int waveDurationRange;
     [SerializeField] private Vector2Int waveSizeRange;
+    [SerializeField] private Vector2Int waveSizeMaxRange;
     [SerializeField] private List<Enemy> normalEnemies;
     [SerializeField] private List<Enemy> restrictedEnemies;
+    [SerializeField] private int increaseDifficultyThreshold;
+    [SerializeField] private float randomnessRadius;
 
     private float currentWaveTime;
 
     private int waveSize;
+    private int previousIncrementCount;
     private List<Enemy> enemies = new List<Enemy>();
 
     private void Start()
@@ -36,6 +40,15 @@ public class EnemyManager : CW_Singleton<EnemyManager>
                         RemoveEnemy(enemies[i]);
                     }
                 }
+            }
+        };
+
+        GameManager.Instance.OnStationReached += () =>
+        {
+            if(GameManager.Instance.StationsReached - previousIncrementCount >= increaseDifficultyThreshold)
+            {
+                previousIncrementCount = GameManager.Instance.StationsReached;
+                waveSizeRange = new Vector2Int(Mathf.Min(waveSizeRange.x + 1, waveSizeMaxRange.x), Mathf.Min(waveSizeRange.y + 1, waveSizeMaxRange.y));
             }
         };
     }
@@ -90,13 +103,15 @@ public class EnemyManager : CW_Singleton<EnemyManager>
         if (target == null)
             return false;
 
+        Vector2 targetPos = (Vector2)target.position + Random.insideUnitCircle * randomnessRadius;
+
         if (restricted)
             enemy = Instantiate(restrictedEnemies[Random.Range(0, restrictedEnemies.Count)], spawnPointHolder.GetChild(Random.Range(0, spawnPointHolder.childCount)).position, Quaternion.identity);
         else
             enemy = Instantiate(normalEnemies[Random.Range(0, normalEnemies.Count)], spawnPointHolder.GetChild(Random.Range(0, spawnPointHolder.childCount)).position, Quaternion.identity);
 
         enemies.Add(enemy);
-        enemy.Initialize(target.position);
+        enemy.Initialize(targetPos);
 
         return true;
     }
@@ -133,6 +148,22 @@ public class EnemyManager : CW_Singleton<EnemyManager>
         for (int i = 0; i < targetPointHolderNormal.childCount; i++)
         {
             targetPointsNormal.Add(targetPointHolderNormal.GetChild(i));
+        }
+    }
+
+    //Debug
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+
+        for (int i = 0; i < targetPointHolderRestricted.childCount; i++)
+        {
+            Gizmos.DrawWireSphere(targetPointHolderRestricted.GetChild(i).position, randomnessRadius);
+        }
+
+        for (int i = 0; i < targetPointHolderNormal.childCount; i++)
+        {
+            Gizmos.DrawWireSphere(targetPointHolderNormal.GetChild(i).position, randomnessRadius);
         }
     }
 }

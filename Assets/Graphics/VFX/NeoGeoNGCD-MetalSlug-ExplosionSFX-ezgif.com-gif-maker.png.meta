@@ -2231,15 +2231,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_101
+      name: train_explosion_9
       rect:
         serializedVersion: 2
         x: 335
         y: 2341
         width: 57
         height: 154
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.4732832, y: 0.074781545}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2252,57 +2252,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_102
-      rect:
-        serializedVersion: 2
-        x: 420
-        y: 2487
-        width: 6
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3cb1ba3e0aad94c71b5563509f23e2b1
-      internalID: 373207515
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_103
-      rect:
-        serializedVersion: 2
-        x: 485
-        y: 2488
-        width: 7
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f9cb7e8f2117f4a9a884f19c7c9218f2
-      internalID: 2133661084
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_104
+      name: train_explosion_12
       rect:
         serializedVersion: 2
         x: 523
         y: 2339
         width: 66
-        height: 151
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 154
+      alignment: 9
+      pivot: {x: 0.49110645, y: 0.099874124}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2315,28 +2273,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_105
-      rect:
-        serializedVersion: 2
-        x: 551
-        y: 2488
-        width: 7
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 62ec70e528570453dbd774d7498b73b5
-      internalID: 1721517273
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_106
+      name: train_explosion_1
       rect:
         serializedVersion: 2
         x: 3
@@ -2357,13 +2294,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_107
+      name: train_explosion_2
       rect:
         serializedVersion: 2
         x: 28
-        y: 2341
-        width: 208
-        height: 72
+        y: 2344
+        width: 31
+        height: 10
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2378,15 +2315,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_108
+      name: train_explosion_7
       rect:
         serializedVersion: 2
         x: 236
         y: 2341
         width: 48
         height: 113
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.48730978, y: 0.09300245}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2399,15 +2336,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_109
+      name: train_explosion_8
       rect:
         serializedVersion: 2
         x: 284
         y: 2341
         width: 51
         height: 146
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.4761125, y: 0.07234422}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2420,15 +2357,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_110
+      name: train_explosion_10
       rect:
         serializedVersion: 2
         x: 392
         y: 2339
-        width: 129
-        height: 149
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 65
+        height: 156
+      alignment: 9
+      pivot: {x: 0.5215163, y: 0.101087324}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2441,15 +2378,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_111
+      name: train_explosion_13
       rect:
         serializedVersion: 2
         x: 3
         y: 2174
-        width: 330
+        width: 65
         height: 160
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5058996, y: 0.061390687}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2462,15 +2399,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_112
+      name: train_explosion_18
       rect:
         serializedVersion: 2
-        x: 335
-        y: 2192
-        width: 200
-        height: 144
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 334
+        y: 2175
+        width: 66
+        height: 161
+      alignment: 9
+      pivot: {x: 0.5, y: 0.113843836}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2483,15 +2420,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_113
+      name: train_explosion_21
       rect:
         serializedVersion: 2
         x: 3
         y: 2039
         width: 66
         height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.49262926, y: 0.09333801}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2504,15 +2441,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_114
+      name: train_explosion_22
       rect:
         serializedVersion: 2
         x: 71
         y: 2044
-        width: 136
+        width: 66
         height: 125
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.49262908, y: 0.07579297}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2525,15 +2462,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_115
+      name: train_explosion_24
       rect:
         serializedVersion: 2
         x: 207
-        y: 2057
+        y: 2044
         width: 70
-        height: 112
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 125
+      alignment: 9
+      pivot: {x: 0.5245976, y: 0.13726953}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2550,11 +2487,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 277
-        y: 2070
-        width: 202
-        height: 99
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 2044
+        width: 69
+        height: 125
+      alignment: 9
+      pivot: {x: 0.50840294, y: 0.1845879}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2567,15 +2504,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_117
+      name: train_explosion_28
       rect:
         serializedVersion: 2
         x: 480
-        y: 2088
+        y: 2044
         width: 64
-        height: 81
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 125
+      alignment: 9
+      pivot: {x: 0.5071621, y: 0.16993555}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2588,36 +2525,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_118
-      rect:
-        serializedVersion: 2
-        x: 510
-        y: 2083
-        width: 5
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ce26a676926b43188af63deb812a9f1
-      internalID: 242828495
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_119
+      name: train_explosion_29
       rect:
         serializedVersion: 2
         x: 3
-        y: 1974
+        y: 1949
         width: 64
-        height: 63
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 88
+      alignment: 9
+      pivot: {x: 0.50444555, y: 0.15403886}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2630,15 +2546,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_120
+      name: train_explosion_30
       rect:
         serializedVersion: 2
         x: 67
-        y: 1980
+        y: 1949
         width: 66
-        height: 57
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 88
+      alignment: 9
+      pivot: {x: 0.49568883, y: 0.15727234}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -7216,7 +7132,7 @@ TextureImporter:
         width: 31
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -7237,7 +7153,7 @@ TextureImporter:
         width: 42
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -7245,6 +7161,300 @@ TextureImporter:
       bones: []
       spriteID: 67ce34a89625745ac9e94a0cdc348ac4
       internalID: 1517001734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_explosion_3
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 2344
+        width: 31
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6cdac7cc153b40e5a873ccf953216d2
+      internalID: 414071102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_explosion_4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 2344
+        width: 40
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32e9a21571b8f4b67b8b1edeb39cff7e
+      internalID: 285392064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_explosion_5
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 2342
+        width: 47
+        height: 46
+      alignment: 9
+      pivot: {x: 0.50648075, y: 0.21529488}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b9acee0440b2424ba1c151120341876
+      internalID: -2089580217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_explosion_6
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 2341
+        width: 48
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5000003, y: 0.13107945}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d6461e0290d3431e94bc6a8c974602a
+      internalID: -482337619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_explosion_11
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 2340
+        width: 66
+        height: 154
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08486265}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 468b5990830ae4ba9b58b2d7f9cee3ff
+      internalID: 1949161694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_explosion_14
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 2175
+        width: 65
+        height: 158
+      alignment: 9
+      pivot: {x: 0.49350235, y: 0.104368575}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ed54955f07e849c2a8dadbe9e3453e7
+      internalID: 944192785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_explosion_15
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 2175
+        width: 67
+        height: 158
+      alignment: 9
+      pivot: {x: 0.48739237, y: 0.104368575}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71ea64328ce4f4ed583380cd9efa624b
+      internalID: 1198014963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_explosion_16
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 2175
+        width: 66
+        height: 159
+      alignment: 9
+      pivot: {x: 0.49930364, y: 0.10856734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1f0a9a36c73948779146ced06ed03aa
+      internalID: -1876462825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_explosion_17
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 2175
+        width: 65
+        height: 159
+      alignment: 9
+      pivot: {x: 0.4820585, y: 0.10637468}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bca05350d785a40ada30b35a73566691
+      internalID: 380261580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_explosion_19
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 2175
+        width: 68
+        height: 160
+      alignment: 9
+      pivot: {x: 0.49588192, y: 0.120224}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e7311f6f0b264162ace96ce3afd411d
+      internalID: -1864680480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_explosion_20
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 2175
+        width: 64
+        height: 161
+      alignment: 9
+      pivot: {x: 0.5053344, y: 0.12466639}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b07308bdafaa47a2bbf2aa7181a0e80
+      internalID: -669060921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_explosion_23
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 2044
+        width: 69
+        height: 124
+      alignment: 9
+      pivot: {x: 0.51410043, y: 0.11945171}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c96f72a94895a4aafa09da9407ae44c7
+      internalID: -594246837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_42
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 2044
+        width: 66
+        height: 125
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1864082}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad8689ef818347aeb51d99f1600495c
+      internalID: 910445555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_43
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 2044
+        width: 65
+        height: 125
+      alignment: 9
+      pivot: {x: 0.51203567, y: 0.18708399}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfe6fe37e1502404084a25960c8c95be
+      internalID: 334290914
       vertices: []
       indices: 
       edges: []
@@ -7264,28 +7474,13 @@ TextureImporter:
       NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_1: -1972716667
       NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_10: 1753143402
       NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_100: 1949024156
-      NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_101: 957593128
       NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_102: 373207515
       NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_103: 2133661084
-      NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_104: 1235373858
       NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_105: 1721517273
-      NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_106: -2113398681
-      NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_107: 984763764
-      NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_108: -378630710
-      NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_109: -1509943958
       NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_11: -1306174429
-      NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_110: 1344828683
-      NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_111: 962266520
-      NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_112: -27142705
-      NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_113: 1193423975
-      NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_114: 935362269
-      NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_115: -1272265688
       NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_116: 164117657
-      NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_117: 753784350
       NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_118: 242828495
-      NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_119: 1692541552
       NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_12: 1303523645
-      NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_120: -1009583364
       NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_121: 1662043279
       NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_122: -478221857
       NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_123: 1861120970
@@ -7486,6 +7681,8 @@ TextureImporter:
       NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_4: 1740125934
       NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_40: 373717327
       NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_41: 150412087
+      NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_42: 910445555
+      NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_43: 334290914
       NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_45: -700333791
       NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_5: 1426281975
       NeoGeoNGCD-MetalSlug-ExplosionSFX-ezgif.com-gif-maker_59: -1426111914
@@ -7600,6 +7797,33 @@ TextureImporter:
       shoot_6: -1427389687
       shoot_7: -1497743050
       shoot_8: 390425738
+      train_explosion_1: -2113398681
+      train_explosion_10: 1344828683
+      train_explosion_11: 1949161694
+      train_explosion_12: 1235373858
+      train_explosion_13: 962266520
+      train_explosion_14: 944192785
+      train_explosion_15: 1198014963
+      train_explosion_16: -1876462825
+      train_explosion_17: 380261580
+      train_explosion_18: -27142705
+      train_explosion_19: -1864680480
+      train_explosion_2: 984763764
+      train_explosion_20: -669060921
+      train_explosion_21: 1193423975
+      train_explosion_22: 935362269
+      train_explosion_23: -594246837
+      train_explosion_24: -1272265688
+      train_explosion_28: 753784350
+      train_explosion_29: 1692541552
+      train_explosion_3: 414071102
+      train_explosion_30: -1009583364
+      train_explosion_4: 285392064
+      train_explosion_5: -2089580217
+      train_explosion_6: -482337619
+      train_explosion_7: -378630710
+      train_explosion_8: -1509943958
+      train_explosion_9: 957593128
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

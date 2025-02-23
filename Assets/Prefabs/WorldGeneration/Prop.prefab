@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f788a324cd34d9489c62f72e70705f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alwaysUpdate: 0
+  childRenderer: {fileID: 0}
 --- !u!1 &6058646127592360245
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c737d8ebb0f667b44964a46eed66cbcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomizeRadius: 0.5
+  randomizeRadius: 0.2
   destroyOffScreen: 1
 --- !u!114 &4091029922832825370
 MonoBehaviour:
@@ -158,6 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76fb812fb74242d8a90ba2c83f65060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  multiplier: 1
 --- !u!61 &2204294164060760716
 BoxCollider2D:
   m_ObjectHideFlags: 0

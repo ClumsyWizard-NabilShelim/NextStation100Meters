@@ -16,8 +16,8 @@ MonoBehaviour:
   <Name>k__BackingField: Arm Workers
   <Description>k__BackingField: Arm all of your workers.
   <BulletCost>k__BackingField: 0
-  <MetalCost>k__BackingField: 35
-  <ScrewCost>k__BackingField: 35
+  <MetalCost>k__BackingField: 70
+  <ScrewCost>k__BackingField: 70
   <Upgrades>k__BackingField:
     entries:
     - key: 4

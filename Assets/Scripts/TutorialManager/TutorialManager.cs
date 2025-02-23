@@ -21,7 +21,6 @@ public class TutorialManager : CW_Singleton<TutorialManager>
         audioPlayer = GetComponent<CW_AudioPlayer>();
 
         animator = GetComponent<Animator>();
-        closeButton.gameObject.SetActive(false);
         currentIndex = 0;
         tutorialHolder.GetChild(currentIndex).gameObject.SetActive(true);
 
@@ -32,11 +31,6 @@ public class TutorialManager : CW_Singleton<TutorialManager>
             currentIndex++;
             if(currentIndex >= tutorialHolder.childCount)
                 currentIndex = tutorialHolder.childCount - 1;
-            
-            if(currentIndex == tutorialHolder.childCount - 1)
-                closeButton.gameObject.SetActive(true);
-            else
-                closeButton.gameObject.SetActive(false);
 
             tutorialHolder.GetChild(currentIndex).gameObject.SetActive(true);
         });
@@ -50,7 +44,6 @@ public class TutorialManager : CW_Singleton<TutorialManager>
             if (currentIndex < 0)
                 currentIndex = 0;
 
-            closeButton.gameObject.SetActive(false);
             tutorialHolder.GetChild(currentIndex).gameObject.SetActive(true);
         });
 
@@ -59,6 +52,8 @@ public class TutorialManager : CW_Singleton<TutorialManager>
             audioPlayer.Play("Menu");
             animator.SetBool("Show", false);
         });
+
+        Open();
     }
 
     public void Open()

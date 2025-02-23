@@ -70,11 +70,20 @@ public class Train : MonoBehaviour
 
     [Header("Repair")]
     [SerializeField] private Vector2Int repairMetalCostRange;
+    [SerializeField] private Vector2Int repairMetalMaxCostRange;
     [SerializeField] private Vector2Int repairScrewCostRange;
+    [SerializeField] private Vector2Int repairScrewMaxCostRange;
+    [SerializeField] private int repairIncreaseThreshold;
     [SerializeField] private CW_Dictionary<RepairType, Sprite> repairIcons;
     private float repairCheckRange;
     public Dictionary<string, RepairData> RequiredRepairs { get; private set; } = new Dictionary<string, RepairData>();
     private int repairIDGenerationNumber;
+    private int previousCostIncrementCount;
+
+    [Header("Visuals")]
+    [SerializeField] private float timeBetweenExplosion;
+    private List<TrainExplosionVFX> explosionParticleSystems = new List<TrainExplosionVFX>();
+    private bool canExplode;
 
     //Stats and cargo
     private CW_Dictionary<StatType, int> passengerState = new CW_Dictionary<StatType, int>();
@@ -89,6 +98,8 @@ public class Train : MonoBehaviour
         audioPlayer = GetComponent<CW_AudioPlayer>();
         WeaponSystem= GetComponentInChildren<WeaponSystem>();
 
+        canExplode = true;
+
         engineCompartment.Initialize(this);
         workerCompartment.Initialize(this);
         for (int i = 0; i < cargoCompartments.Count; i++)
@@ -99,6 +110,7 @@ public class Train : MonoBehaviour
             else
                 cargoCompartments[i].SetEnd(false);
         }
+        GetExplosionParticleSytmes();
         CreateBounds();
 
         AddPassengerStat(StatType.Anger, 0);
@@ -119,6 +131,16 @@ public class Train : MonoBehaviour
                 ProcessPassengerDetails();
             else if(state == GameState.Over)
                 audioPlayer.Stop("Train");
+        };
+
+        GameManager.Instance.OnStationReached += () =>
+        {
+            if (GameManager.Instance.StationsReached - previousCostIncrementCount >= repairIncreaseThreshold)
+            {
+                previousCostIncrementCount = GameManager.Instance.StationsReached;
+                repairMetalCostRange = new Vector2Int(Mathf.Min(repairMetalCostRange.x + 1, repairMetalMaxCostRange.x), Mathf.Min(repairMetalCostRange.y + 1, repairMetalMaxCostRange.y));
+                repairScrewCostRange = new Vector2Int(Mathf.Min(repairScrewCostRange.x + 1, repairScrewMaxCostRange.x), Mathf.Min(repairScrewCostRange.y + 1, repairScrewMaxCostRange.y));
+            }
         };
     }
 
@@ -223,7 +245,11 @@ public class Train : MonoBehaviour
         if (currentHullIntegrity < 0)
         {
             currentHullIntegrity = 0;
-            Dead();
+            if(canExplode)
+            {
+                StartCoroutine(Dead());
+                canExplode = false;
+            }
         }
 
         if(currentHullIntegrity < repairCheckRange)
@@ -247,8 +273,17 @@ public class Train : MonoBehaviour
         HealthModified();
     }
 
-    private void Dead()
+    private IEnumerator Dead()
     {
+        GameManager.Instance.SetState(GameState.Over);
+        for (int i = 0; i < explosionParticleSystems.Count; i++)
+        {
+            explosionParticleSystems[i].Explode();   
+            yield return new WaitForSeconds(timeBetweenExplosion);
+        }
+
+        yield return new WaitForSeconds(2.0f);
+
         GameManager.Instance.GameOver("Your train was destroyed and your enterprise has reached its last station forever.");
     }
 
@@ -459,6 +494,11 @@ public class Train : MonoBehaviour
         transform.position = new Vector3((transform.childCount - 1.0f) * 2, transform.position.y, 0.0f);
         PlayerDataManager.Instance.UpdateCargoUI();
         CreateBounds();
+
+        for (int i = 0; i < compartment.TrainStats.ExplosionHolder.childCount; i++)
+        {
+            explosionParticleSystems.Add(compartment.TrainStats.ExplosionHolder.GetChild(i).GetComponent<TrainExplosionVFX>());
+        }
     }
     public void IncreaseWorkerCapacity(int amount)
     {
@@ -481,6 +521,30 @@ public class Train : MonoBehaviour
     public void UpdatePassengerStatUI()
     {
         PlayerDataManager.Instance.UpdateStatUI(StatType.Anger, passengerState[StatType.Anger], 100);
+    }
+
+    //Visuals
+    private void GetExplosionParticleSytmes()
+    {
+        explosionParticleSystems = new List<TrainExplosionVFX>();
+
+        for (int i = 0; i < engineCompartment.TrainStats.ExplosionHolder.childCount; i++)
+        {
+            explosionParticleSystems.Add(engineCompartment.TrainStats.ExplosionHolder.GetChild(i).GetComponent<TrainExplosionVFX>());
+        }
+
+        for (int i = 0; i < workerCompartment.TrainStats.ExplosionHolder.childCount; i++)
+        {
+            explosionParticleSystems.Add(workerCompartment.TrainStats.ExplosionHolder.GetChild(i).GetComponent<TrainExplosionVFX>());
+        }
+
+        for (int i = 0; i < cargoCompartments.Count; i++)
+        {
+            for (int j = 0; j < cargoCompartments[i].TrainStats.ExplosionHolder.childCount; j++)
+            {
+                explosionParticleSystems.Add(cargoCompartments[i].TrainStats.ExplosionHolder.GetChild(j).GetComponent<TrainExplosionVFX>());
+            }
+        }
     }
 
     //Helper functions

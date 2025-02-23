@@ -10,7 +10,7 @@ public class TrainCompartment : MonoBehaviour
     public CompartmentManagement Management { get; private set; }
 
     protected Train train;
-    protected TrainHealthComponenet trainStats;
+    public TrainHealthComponenet TrainStats { get; protected set; }
     [SerializeField] private Transform gfx;
 
     //Random Jitter
@@ -27,8 +27,8 @@ public class TrainCompartment : MonoBehaviour
         this.train = train;
         Management = GetComponent<CompartmentManagement>();
         Management.Initialize(train);
-        trainStats = GetComponent<TrainHealthComponenet>();
-        trainStats.Initialize(train);
+        TrainStats = GetComponent<TrainHealthComponenet>();
+        TrainStats.Initialize(train);
     }
 
     protected virtual void Update()

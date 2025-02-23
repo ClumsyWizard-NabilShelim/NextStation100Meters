@@ -363,8 +363,11 @@ MonoBehaviour:
   cargoCompartments:
   - {fileID: 3139589310651439361}
   hullIntegrity: 375
-  repairMetalCostRange: {x: 5, y: 25}
-  repairScrewCostRange: {x: 5, y: 25}
+  repairMetalCostRange: {x: 10, y: 20}
+  repairMetalMaxCostRange: {x: 15, y: 35}
+  repairScrewCostRange: {x: 15, y: 45}
+  repairScrewMaxCostRange: {x: 35, y: 65}
+  repairIncreaseThreshold: 1
   repairIcons:
     entries:
     - key: 0
@@ -373,6 +376,7 @@ MonoBehaviour:
       value: {fileID: 21300000, guid: 88e0d966139e207499d0e1dfbddf6b0d, type: 3}
     - key: 2
       value: {fileID: 21300000, guid: 66afb4b1eae57db46a0ef038bcbb9cf8, type: 3}
+  timeBetweenExplosion: 0.1
 --- !u!114 &5773350628923386483
 MonoBehaviour:
   m_ObjectHideFlags: 0

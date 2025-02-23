@@ -15,9 +15,9 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: 0}
   <Name>k__BackingField: Weapon Upgrade v2
   <Description>k__BackingField: Deal more damage per round of bullet.
-  <BulletCost>k__BackingField: 80
-  <MetalCost>k__BackingField: 70
-  <ScrewCost>k__BackingField: 50
+  <BulletCost>k__BackingField: 160
+  <MetalCost>k__BackingField: 140
+  <ScrewCost>k__BackingField: 100
   <Upgrades>k__BackingField:
     entries:
     - key: 5

@@ -5,6 +5,7 @@ using UnityEngine;
 public class TrainHealthComponenet : MonoBehaviour, IDamageable
 {
     private Train train;
+    [field: SerializeField] public Transform ExplosionHolder;
 
     public void Initialize(Train train)
     { 

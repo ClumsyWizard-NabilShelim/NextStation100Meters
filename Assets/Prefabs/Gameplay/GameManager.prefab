@@ -317,8 +317,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49c85e1f8f241284680f5e27cd988b99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldSpeed: 6
-  travelDurationRange: {x: 30, y: 40}
+  worldSpeed: 12
+  travelDurationRange: {x: 40, y: 60}
   timeBetweenCombatDurationRange: {x: 5, y: 15}
   gameOverAnimator: {fileID: 372348439798078701}
   gameOverReasonText: {fileID: 2822076676397266992}
@@ -345,7 +345,7 @@ MonoBehaviour:
         Loop: 1
         PlayOnAwake: 1
         InstantStop: 0
-        Multiplier: 0.4
+        Multiplier: 0.8
         AudioSource: {fileID: 0}
     - key: Gameplay
       value:
@@ -361,7 +361,7 @@ MonoBehaviour:
         Loop: 1
         PlayOnAwake: 0
         InstantStop: 0
-        Multiplier: 0.4
+        Multiplier: 0.8
         AudioSource: {fileID: 0}
     - key: Click
       value:

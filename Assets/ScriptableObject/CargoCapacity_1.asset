@@ -15,9 +15,9 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: 0}
   <Name>k__BackingField: Cargo Space Increase v1
   <Description>k__BackingField: Increase all cargo container space.
-  <BulletCost>k__BackingField: 30
-  <MetalCost>k__BackingField: 50
-  <ScrewCost>k__BackingField: 50
+  <BulletCost>k__BackingField: 60
+  <MetalCost>k__BackingField: 100
+  <ScrewCost>k__BackingField: 100
   <Upgrades>k__BackingField:
     entries:
     - key: 2

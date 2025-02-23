@@ -9,6 +9,8 @@ public class InputManager : CW_Persistant<InputManager>, ISceneLoadEvent
     public Action OnPause;
     public Action OnShoot;
 
+    [field: SerializeField] public bool CanShowTutorial { get; set; } = true;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))

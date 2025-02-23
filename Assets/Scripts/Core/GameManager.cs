@@ -56,12 +56,14 @@ public class GameManager : CW_Singleton<GameManager>
     [SerializeField] private CW_Button mainMenuButton;
 
     //Stats record
-    public int StationsReached { get; set;}
+    public int StationsReached { get; private set;}
     public int PassengersCarried { get; set;}
     public int PassengersKilled { get; set;}
     public int PassengersInfected { get; set;}
     public int BulletsEarned { get; set; }
     public int BulletsSpent { get; set; }
+
+    public Action OnStationReached;
 
 
     private void Start()
@@ -150,6 +152,8 @@ public class GameManager : CW_Singleton<GameManager>
         else if (state == GameState.Station)
         {
             StationManager.Instance.SpawnNewStation();
+            StationsReached++;
+            OnStationReached?.Invoke();
             changeRate = (2 * StationManager.Instance.CurrentStation.transform.position.x) / worldSpeed;
             currentTime = 0.0f;
         }

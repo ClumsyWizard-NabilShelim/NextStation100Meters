@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56502c6eec77388458bf8434a4f4ccc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <CanShowTutorial>k__BackingField: 1
 --- !u!1 &7190385210259988712
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,9 +16,9 @@ MonoBehaviour:
   <Name>k__BackingField: Third Cargo Container
   <Description>k__BackingField: Add another cargo container to carry more passengers
     and resources.
-  <BulletCost>k__BackingField: 50
-  <MetalCost>k__BackingField: 70
-  <ScrewCost>k__BackingField: 30
+  <BulletCost>k__BackingField: 100
+  <MetalCost>k__BackingField: 140
+  <ScrewCost>k__BackingField: 60
   <Upgrades>k__BackingField:
     entries:
     - key: 1

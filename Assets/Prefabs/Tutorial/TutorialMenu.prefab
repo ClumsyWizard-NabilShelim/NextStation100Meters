@@ -2031,7 +2031,9 @@ PrefabInstance:
     - target: {fileID: 3797240573541752417, guid: 884e400cc7f99634fa53bc93ad39c901, type: 3}
       propertyPath: m_text
       value: Stations are safe spaces. When you reach a station you can buy or sell
-        materials and take on new passengers who will pay you in bullets <sprite=3>
+        materials and take on new passengers who will pay you in bullets <sprite=3>.
+        If you are under attack however, you cannot stop at the station, so make
+        sure you clear all enemies.
       objectReference: {fileID: 0}
     - target: {fileID: 3797240573541752417, guid: 884e400cc7f99634fa53bc93ad39c901, type: 3}
       propertyPath: m_fontSize

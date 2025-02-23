@@ -32,6 +32,7 @@ public class TrainDecalManager : MonoBehaviour
             return;
 
         int index = Random.Range(0, activeDecals.Count);
+        decals.Add(activeDecals[index]);
         activeDecals[index].ActivateRepairedDecal();
         activeDecals.RemoveAt(index);
     }

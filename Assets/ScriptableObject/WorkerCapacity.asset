@@ -16,8 +16,8 @@ MonoBehaviour:
   <Name>k__BackingField: More Workers
   <Description>k__BackingField: Travel with more workers.
   <BulletCost>k__BackingField: 0
-  <MetalCost>k__BackingField: 35
-  <ScrewCost>k__BackingField: 35
+  <MetalCost>k__BackingField: 70
+  <ScrewCost>k__BackingField: 70
   <Upgrades>k__BackingField:
     entries:
     - key: 3

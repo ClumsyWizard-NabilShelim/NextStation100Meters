@@ -13,7 +13,6 @@ public class StationManager : CW_Singleton<StationManager>
     //Spawn Station
     public void SpawnNewStation()
     {
-        GameManager.Instance.StationsReached++;
         CurrentStation = Instantiate(station, stationSpawnPoint.position, Quaternion.identity);
         CurrentStation.Initialize();
     }
